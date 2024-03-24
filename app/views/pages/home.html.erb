@@ -1,4 +1,4 @@
-<%# <h1>Pages#home</h1>
+<%# <h3>Pages#home</h3>
 <p>Find me in app/views/pages/home.html.erb</p> %>
 
 <%# <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo", class: "home-container" %>
@@ -6,3 +6,53 @@
 <div class="home-container">
   <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo" %>
 </div>
+
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 home-content">
+
+  <%= image_tag('me.jpg', class: 'img-circle my-5', alt: 'Circular Image of Laurent') %>
+
+  <div class="d-flex flex-row my-5 dark-background">
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Home</h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Education</h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Experience</h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Event Positions</h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Contact</h4>
+  </div>
+
+  <div class="my-5 d-flex flex-column justify-content-center align-items-center dark-background">
+    <h1>Hi I’m Laurent Lefebvre</h1>
+    <h1>Welcome to my personal website!</h1>
+  </div>
+
+  <h5 class="my-3 dark-background">laurent.d.lefebvre@gmail.com</h5>
+
+  <div class="background-greenneon">
+          <a href="https://www.linkedin.com/in/laurentlefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.instagram.com/laurent.d.lefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-square-instagram"></i></a>
+  </div>
+  <p class="my-3 dark-background">©2022 by Laurent Lefebvre</p>
+</div>
+
+<%# <script>
+  let initialScale = 1;
+  const backgroundElement = document.getElementById('myVideo');
+
+  function adjustBackgroundForZoom() {
+    // Try to estimate the zoom level based on the ratio of the innerWidth to the outerWidth
+    const estimatedZoomLevel = window.outerWidth / window.innerWidth;
+
+    // Adjust the scale of the background based on the zoom level
+    // The multiplier (1, 1.5, 2, etc.) might need tweaking based on your specific needs
+    const newScale = initialScale * estimatedZoomLevel;
+
+    // Apply the calculated scale to the background element
+    backgroundElement.style.transform = `scale(${newScale})`;
+    backgroundElement.style.transformOrigin = 'top left'; // Adjust as needed
+  }
+
+  // Initial adjustment
+  adjustBackgroundForZoom();
+
+  // Listen for resize events which are triggered on zoom as well
+  window.addEventListener('resize', adjustBackgroundForZoom);
+</script> %>

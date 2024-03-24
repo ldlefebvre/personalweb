@@ -14,24 +14,199 @@
 //   overflow: hidden; /* Prevent scrolling */
 // }
 
-.home-container {
-  position: fixed; /* Covers the entire screen */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden; /* Hide the overflow */
-  z-index: -1; /* Ensure it stays in the background */
-  display: flex; /* Use flexbox to center the video */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-}
+// .home-container {
+//   position: fixed; /* Covers the entire screen */
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   overflow: hidden; /* Hide the overflow */
+//   z-index: -1; /* Ensure it stays in the background */
+//   display: flex; /* Use flexbox to center the video */
+//   justify-content: center; /* Center horizontally */
+//   align-items: center; /* Center vertically */
+// }
+
+// #myVideo {
+//   position: absolute; /* Absolute positioning relative to the container */
+//   min-width: 100%; /* Minimum width 100% */
+//   min-height: auto; /* Minimum height 100% */
+//   width: auto; /* Auto width to maintain aspect ratio */
+//   height: auto; /* Auto height to maintain aspect ratio */
+//   object-fit: cover; /* Cover the container fully */
+// }
+
+// #myVideo {
+//   position: fixed;
+//   top: 50%; left: 50%;
+//   z-index: 1;
+//   min-width: 100%;
+//   min-height: 100%;
+//   width: auto;
+//   height: auto;
+//   transform: translate(-50%, -50%);
+// }
+
+// #myVideo {
+//   object-fit: cover;
+//   width: 100vw;
+//   height: auto;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: -1;
+// }
 
 #myVideo {
-  position: absolute; /* Absolute positioning relative to the container */
-  min-width: 100%; /* Minimum width 100% */
-  min-height: 100%; /* Minimum height 100% */
-  width: auto; /* Auto width to maintain aspect ratio */
-  height: auto; /* Auto height to maintain aspect ratio */
-  object-fit: cover; /* Cover the container fully */
+  object-fit: cover;
+  width: 100vw; /* Ensure it spans the full viewport width */
+  height: 100vh; /* Ensure it spans the full viewport height */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Keep the video in the background */
+}
+
+.home-content {
+  color: rgba(106, 255, 185, 1);
+  font-weight: 1500;
+  .d-flex.flex-row.my-5.dark-background {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Adds space between items, adjust as needed */
+  }
+}
+
+.dark-background {
+  background-color: rgba(0, 40, 40, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  margin-inline: 20px;
+  border-radius: 10px;
+  // border: 1px solid rgba(0, 90, 70, 0.8);
+  box-shadow: 0 0 10px rgba(0, 80, 60, 1);
+}
+
+.lightgreen-capsule {
+  background-color: rgba(0, 235, 161, 1);
+  border-radius: 50rem; // Fully rounded corners for the capsule shape
+  // padding: 0.5rem 2rem; // Adjust vertical padding to reduce space
+  width: auto; // Adjust width based on content or specify a fixed width
+  display: flex; // Use flex to better control alignment
+  align-items: center; // Centers content vertically within the capsule
+  justify-content: center; // Centers content horizontally
+  text-align: center;
+  height: 2.5rem; // Define a fixed height to control the size of the capsule
+  margin: 0.5rem; // Ensure some space around capsules if they wrap
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.social-buttons {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(0, 235, 161, 1);
+  padding: 0px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+  font-size: 300%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.darkgreen-text {
+  color: rgba(0, 40, 40, 1);
+  line-height: 1; // Reduce line-height to minimize excess space
+  margin: 0; // Remove default margins
+  padding: 1rem 2rem; // Remove any default padding
+}
+
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%
+
+}
+
+.lightgreen-capsule:hover {
+  background-color: rgba(0, 255, 180, 1);
+  color: rgba(0, 40, 40, 1);
+  box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), // Outer soft glow
+              0 0 10px 2px rgba(0, 255, 180, 0.4); // Additional layer for depth
+  scale: 105%;
+}
+
+
+.social-buttons:hover {
+  background-color: rgba(0, 255, 180, 1);
+  color: rgba(0, 40, 40, 1);
+  box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), // Outer soft glow
+              0 0 10px 2px rgba(0, 255, 180, 0.4);
+}
+
+@media (max-width: 1120px) {
+  /* For a screen < 960px, this CSS will be read */
+  // .container {
+  //   width: 700px;
+  // }
+  .img-circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+  .home-content {
+    h1, h2, h3, h4, h5, h6, p {
+      font-size: 0.9em;
+    }
+  }
+  .social-buttons {
+    font-size: 260%;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  // .container {
+  //   width: 500px;
+  // }
+  .img-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+  }
+  .home-content {
+    h1, h2, h3, h4, h5, h6, p {
+      font-size: 0.8em;
+    }
+    .d-flex.flex-row {
+      flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+    }
+  }
+  .social-buttons {
+    font-size: 230%;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  // .container {
+  //   width: 300px;
+  // }
+  .img-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%
+  }
+  .home-content {
+    h1, h2, h3, h4, h5, h6, p {
+      font-size: 0.7em;
+    }
+    .d-flex.flex-row {
+      flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+    }
+  }
+  .social-buttons {
+    font-size: 200%
+  }
 }
