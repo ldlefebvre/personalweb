@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+// #myVideo {
+//   position: fixed; /* Fixed/sticky position */
+//   right: 0;
+//   bottom: 0;
+//   min-width: 100%; /* Minimum width 100% */
+//   min-height: 100%; /* Minimum height 100% */
+// }
+
+// /* Add styles to your elements as needed */
+// .home-container {
+//   height: 100%;
+//   margin: 0;
+//   overflow: hidden; /* Prevent scrolling */
+// }
+
+.home-container {
+  position: fixed; /* Covers the entire screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; /* Hide the overflow */
+  z-index: -1; /* Ensure it stays in the background */
+  display: flex; /* Use flexbox to center the video */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+#myVideo {
+  position: absolute; /* Absolute positioning relative to the container */
+  min-width: 100%; /* Minimum width 100% */
+  min-height: 100%; /* Minimum height 100% */
+  width: auto; /* Auto width to maintain aspect ratio */
+  height: auto; /* Auto height to maintain aspect ratio */
+  object-fit: cover; /* Cover the container fully */
+}
