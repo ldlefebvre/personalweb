@@ -1,0 +1,37 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-web">
+  <%# <div class="container-fluid"> %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav align-items-center activate me-auto">
+        <li class="nav-item logo">
+          <%= link_to root_path, class: "text-decoration-none nav-link logo-link", style: "color: inherit;" do %>
+            <div class="logo-image" alt="logo"></div>
+          <% end %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(education_path) %> tabs-margin">
+          <h4 class="innerbox-marging">
+            <%= link_to 'Education', education_path, class: "text-decoration-none nav-link", style: "color: inherit;" %>
+          </h4>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(experience_path) %> tabs-margin">
+          <h4 class="innerbox-marging">
+            <%= link_to 'Experience', experience_path, class: "text-decoration-none nav-link", style: "color: inherit;" %>
+          </h4>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(contracts_path) %> tabs-margin">
+          <h4 class="innerbox-marging">
+            <%= link_to 'Event Positions', contracts_path, class: "text-decoration-none nav-link", style: "color: inherit;" %>
+          </h4>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(contact_path) %> tabs-margin">
+          <h4 class="innerbox-marging">
+            <%= link_to 'Contact', contact_path, class: "text-decoration-none nav-link", style: "color: inherit;" %>
+          </h4>
+        </li>
+      </ul>
+    </div>
+    <%= image_tag('mepng.png', class: 'nav-pic', alt: 'Circular Image of Laurent') %>
+  <%# </div> %>
+</div>

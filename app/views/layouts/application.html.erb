@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Personalweb</title>
+    <title>Laurent Lefebvre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%# <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"> %>
 
@@ -13,13 +13,32 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-    <%# <link rel="manifest" href="<%= asset_path 'manifest.json' %>
-    <%# <%= render 'shared/ios_pwa_links' %>
-
   </head>
 
   <body>
-    <%= yield %>
+
+    <% unless controller_name == 'pages' && action_name == 'home' %>
+      <%= render "layouts/navbar" %>
+    <% end %>
+    <%# <div id="vue-app"> %>
+    <%# <div class="body-content"> %>
+    <div class="body-content">
+      <%= yield %>
+    </div>
+    <%= turbo_include_tags %>
+    <%# </div> %>
+    <%# </div> %>
+
+    <%# <%= turbo_include_tags %>
+
+
+    <%# <% unless controller_name == 'pages' && action_name == 'home' %>
+      <%# <%= render "layouts/navbar" %>
+    <%# <% end %>
+    <%# <div class="body-content"> %>
+      <%# <%= yield %>
+    <%# </div> %>
+
+    <%# <%= javascript_include_tag 'navbar' %>
   </body>
 </html>

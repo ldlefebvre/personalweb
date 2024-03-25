@@ -3,20 +3,28 @@
 
 <%# <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo", class: "home-container" %>
 
-<div class="home-container">
-  <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo" %>
-</div>
+<div class="page-content">
+  <div class="home-container">
+    <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo", preload: "auto" %>
+  </div>
 
-<div class="d-flex flex-column justify-content-center align-items-center vh-100 home-content">
+  <div class="d-flex flex-column justify-content-center align-items-center vh-100 home-content">
 
-  <%= image_tag('me.jpg', class: 'img-circle my-5', alt: 'Circular Image of Laurent') %>
+    <%= image_tag('me.jpg', class: 'img-circle my-5', alt: 'Circular Image of Laurent') %>
 
-  <div class="d-flex flex-row my-5 dark-background">
-    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Home</h4>
-    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Education</h4>
-    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Experience</h4>
-    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Event Positions</h4>
-    <h4 class="mx-3 lightgreen-capsule darkgreen-text">Contact</h4>
+    <div class="d-flex flex-row my-5 dark-background">
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">
+      <%= link_to 'Education', education_path, class: "text-decoration-none", style: "color: inherit;" %>
+    </h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">
+      <%= link_to 'Experience', experience_path, class: "text-decoration-none", style: "color: inherit;" %>
+    </h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">
+      <%= link_to 'Event Positions', contracts_path, class: "text-decoration-none", style: "color: inherit;" %>
+    </h4>
+    <h4 class="mx-3 lightgreen-capsule darkgreen-text">
+      <%= link_to 'Contact', contact_path, class: "text-decoration-none", style: "color: inherit;" %>
+    </h4>
   </div>
 
   <div class="my-5 d-flex flex-column justify-content-center align-items-center dark-background">
@@ -29,30 +37,9 @@
   <div class="background-greenneon my-3">
           <a href="https://www.linkedin.com/in/laurentlefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-linkedin"></i></a>
           <a href="https://www.instagram.com/laurent.d.lefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-square-instagram"></i></a>
+          <a href="https://github.com/ldlefebvre" target="_blank" class="social-buttons"><i class="fa-brands fa-square-github"></i></a>
+          <div class="rectangle-lightgreen"><a href="https://soundcloud.com/llefebvre" target="_blank" class="social-buttons-opp"><i class="fa-brands fa-soundcloud"></i></a></div>
   </div>
   <p class="my-3 dark-background">©2024 by Laurent Lefebvre</p>
+  </div>
 </div>
-
-<%# <script>
-  let initialScale = 1;
-  const backgroundElement = document.getElementById('myVideo');
-
-  function adjustBackgroundForZoom() {
-    // Try to estimate the zoom level based on the ratio of the innerWidth to the outerWidth
-    const estimatedZoomLevel = window.outerWidth / window.innerWidth;
-
-    // Adjust the scale of the background based on the zoom level
-    // The multiplier (1, 1.5, 2, etc.) might need tweaking based on your specific needs
-    const newScale = initialScale * estimatedZoomLevel;
-
-    // Apply the calculated scale to the background element
-    backgroundElement.style.transform = `scale(${newScale})`;
-    backgroundElement.style.transformOrigin = 'top left'; // Adjust as needed
-  }
-
-  // Initial adjustment
-  adjustBackgroundForZoom();
-
-  // Listen for resize events which are triggered on zoom as well
-  window.addEventListener('resize', adjustBackgroundForZoom);
-</script> %>

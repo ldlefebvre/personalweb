@@ -57,6 +57,16 @@
 //   z-index: -1;
 // }
 
+.page-content {
+  background: linear-gradient(to right, rgb(0, 70, 65), rgb(0, 45, 40));
+  min-height: 100vh; // Adjust the height as necessary
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
 #myVideo {
   object-fit: cover;
   width: 100vw; /* Ensure it spans the full viewport width */
@@ -92,6 +102,20 @@
   box-shadow: 0 0 10px rgba(0, 80, 60, 1);
 }
 
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%
+}
+
+.darkgreen-text {
+  color: rgba(0, 40, 40, 1);
+  line-height: 1; // Reduce line-height to minimize excess space
+  margin: 0; // Remove default margins
+  padding: 1rem 2rem; // Remove any default padding
+  // text-decoration: none;
+}
+
 .lightgreen-capsule {
   background-color: rgba(0, 235, 161, 1);
   border-radius: 50rem; // Fully rounded corners for the capsule shape
@@ -106,6 +130,14 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
+.lightgreen-capsule:hover {
+  background-color: rgba(0, 255, 180, 1);
+  color: rgba(0, 40, 40, 1);
+  box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), // Outer soft glow
+              0 0 10px 2px rgba(0, 255, 180, 0.4); // Additional layer for depth
+  scale: 105%;
+}
+
 .social-buttons {
   display: inline-block;
   text-decoration: none;
@@ -118,34 +150,44 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
-.darkgreen-text {
-  color: rgba(0, 40, 40, 1);
-  line-height: 1; // Reduce line-height to minimize excess space
-  margin: 0; // Remove default margins
-  padding: 1rem 2rem; // Remove any default padding
-}
-
-.img-circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%
-
-}
-
-.lightgreen-capsule:hover {
-  background-color: rgba(0, 255, 180, 1);
-  color: rgba(0, 40, 40, 1);
-  box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), // Outer soft glow
-              0 0 10px 2px rgba(0, 255, 180, 0.4); // Additional layer for depth
-  scale: 105%;
-}
-
-
 .social-buttons:hover {
   background-color: rgba(0, 255, 180, 1);
   color: rgba(0, 40, 40, 1);
   box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), // Outer soft glow
               0 0 10px 2px rgba(0, 255, 180, 0.4);
+}
+
+.social-buttons-opp {
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgba(0, 235, 161, 1);
+  color: rgba(0, 40, 40, 1);
+  padding: 5px 10px; //margin around soundcloud logo
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  font-size: 140%;
+  margin: 15px 10px; //changes color in outside when hovered
+}
+
+
+
+.rectangle-lightgreen {
+  display: inline-block;
+  border-radius: 5px;
+  // margin-left: 5px; //margin left
+  // margin-bottom: 15px;
+  transform: translateY(-10px);
+}
+.rectangle-lightgreen:hover {
+  background-color: rgba(0, 255, 180, 1);
+  box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), /* Outer soft glow */
+              0 0 10px 2px rgba(0, 255, 180, 0.4); /* Additional depth */
+  /* Any other stylistic adjustments to make the hover more noticeable */
+  .social-buttons-opp {
+    background-color: rgba(0, 40, 40, 1); /* Darker background on hover */
+    color: rgba(0, 255, 180, 1); /* Light green text on hover */
+  }
 }
 
 @media (max-width: 1120px) {
@@ -159,10 +201,10 @@
     border-radius: 50%;
   }
   .home-content {
-    h1, h2, h3, h4, h5, h6 {
+    // h1, h2, h3, h4, h5, h6 {
       // font-size: 0.95em;
       // font-weight: 1500;
-    }
+    // }
     p {
       font-size: 9px;
     }

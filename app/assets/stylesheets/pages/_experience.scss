@@ -1,0 +1,9 @@
+.experience-container {
+  background: linear-gradient(to right, rgb(0, 70, 65), rgb(0, 45, 40));
+  min-height: 100vh; // Adjust the height as necessary
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}

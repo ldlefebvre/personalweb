@@ -1,12 +1,238 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar-web {
+  justify-content: center;
+  background: linear-gradient(to right, rgb(0, 120, 115), rgb(0, 95, 90));
+  color: rgba(176, 255, 235, 1);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.nav-item {
+  text-align: center;
+  &:hover {
+    color: rgba(0, 255, 161, 1);
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.nav-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 30px;
+  margin-left: 60px;
+}
+
+.active {
+  color: rgba(0, 255, 161, 1);
+  box-shadow: 0 0 8px 2px rgba(0, 255, 180, 0.6), // Outer soft glow
+              0 0 10px 2px rgba(0, 255, 180, 0.4); // Additional layer for depth
+  scale: 105%;
+  padding-top: 10px;
+  transform: translateY(-5px);
+  border-radius: 10px;
+}
+
+.logo {
+  transform: translateY(-5px);
+  margin-right: 60px;
+  margin-left: 30px;
+}
+
+.tabs-margin {
+  margin-inline: 20px;
+}
+
+.innerbox-marging {
+  margin-inline: 10px;
+}
+
+.logo-link {
+  display: inline-block;
+  width: 220px; // Adjust based on your actual logo size
+  height: 100px; // Adjust based on your actual logo size
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/logo.png'); // Adjust path as necessary
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1300px) {
+  /* For a screen < 960px, this CSS will be read */
+  // .container {
+  //   width: 700px;
+  // }
+  .nav-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+  .nav-item {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 0.95em;
+      // font-weight: 1500;
+    }
+    p {
+      font-size: 9px;
+    }
+  }
+  .tabs-margin {
+    margin-inline: 15px;
+  }
+
+  .innerbox-marging {
+    margin-inline: 7.5px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .logo-image {
+    background-image: url('/assets/logosquare.png'); // Adjust path as necessary
+  }
+  .logo-link {
+    width: 100px; // Adjust based on your actual logo size
+    height: 100px; // Adjust based on your actual logo size
+  }
+  .logo-image {
+    border-radius: 15px;
+  }
+  .logo {
+    transform: translateY(-2.5px);
+  }
+  .nav-item {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 0.9em;
+      // font-weight: 1500;
+    }
+    p {
+      font-size: 8.5px;
+    }
+  }
+  .tabs-margin {
+    margin-inline: 15px;
+  }
+
+  .innerbox-marging {
+    margin-inline: 7.5px;
+  }
+  .logo {
+    margin-right: 50px;
+    margin-left: 20px;
+  }
+  .nav-pic {
+    margin-left: 50px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .navbar-web {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .tabs-margin {
+    margin-inline: 10px;
+  }
+
+  .innerbox-marging {
+    margin-inline: 7.5px;
+  }
+  .nav-item {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 0.8em;
+      // font-weight: 1500;
+    }
+    p {
+      font-size: 8px;
+    }
+  }
+  .logo {
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+  .nav-pic {
+    margin-right: 20px;
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 825px) {
+  /* For a screen < 720px, this CSS will be read */
+  // .container {
+  //   width: 500px;
+  // }
+  .nav-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+  .nav-item {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 0.7em;
+      // font-weight: 1500;
+    }
+    p {
+      font-size: 6px;
+    }
+  }
+
+  .tabs-margin {
+    margin-inline: 5px;
+  }
+
+  .innerbox-marging {
+    margin-inline: 5px;
+  }
+
+  .navbar-web {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .logo {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .nav-pic {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 740px) {
+  /* For a screen < 540px, this CSS will be read */
+  // .container {
+  //   width: 300px;
+  // }
+  .nav-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .nav-item {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 0.6em;
+      // font-weight: 1500;
+    }
+    p {
+      font-size: 5px;
+    }
+  }
+
+  .navbar-web {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .logo {
+    margin-right: 15px;
+    margin-left: 20px;
+  }
+  .nav-pic {
+    margin-right: 20px;
+    margin-left: 15px;
+  }
 }
