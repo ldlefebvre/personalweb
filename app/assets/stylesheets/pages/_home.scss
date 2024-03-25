@@ -80,7 +80,7 @@
 .home-content {
   color: rgba(106, 255, 185, 1);
   font-weight: 1500;
-  .d-flex.flex-row.my-5.dark-background {
+  .d-flex.flex-row.dark-background {
     display: flex;
     flex-wrap: wrap; /* Allow the items to wrap */
     justify-content: center; /* Center items horizontally */
@@ -190,6 +190,21 @@
   }
 }
 
+.big-margin {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.small-margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.more-under-margin {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
 @media (max-width: 1120px) {
   /* For a screen < 960px, this CSS will be read */
   // .container {
@@ -211,6 +226,28 @@
   }
   .social-buttons {
     font-size: 260%;
+  }
+  .social-buttons-opp {
+    font-size: 121%;
+    padding: 4.3px 8.6px;
+    margin: 12.9px 10px;
+  }
+  .rectangle-lightgreen {
+    transform: translateY(-8.6px);
+  }
+  .big-margin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .small-margin {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .more-under-margin {
+    margin-top: 30px;
+    margin-bottom: 45px;
   }
 }
 
@@ -236,6 +273,28 @@
   .social-buttons {
     font-size: 230%;
   }
+  .social-buttons-opp {
+    font-size: 107%;
+    padding: 3.8px 7.6px;
+    margin: 11.4px 10px;
+  }
+  .rectangle-lightgreen {
+    transform: translateY(-7.6px);
+  }
+  .big-margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .small-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .more-under-margin {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
 }
 
 @media (max-width: 540px) {
@@ -259,5 +318,79 @@
   }
   .social-buttons {
     font-size: 200%
+  }
+  .social-buttons-opp {
+    font-size: 93%;
+    padding: 3.3px 6.6px;
+    margin: 9.9px 10px;
+  }
+  .rectangle-lightgreen {
+    transform: translateY(-6.6px);
+  }
+  .big-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .small-margin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .more-under-margin {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+
+@media(max-height: 950px) {
+  .big-margin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .small-margin {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .more-under-margin {
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+}
+
+@media(max-height: 880px) {
+  .big-margin {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .small-margin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .more-under-margin {
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+@media(max-height: 675px) {
+  .big-margin {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  .small-margin {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .more-under-margin {
+    margin-top: 3px;
+    margin-bottom: 5px;
   }
 }

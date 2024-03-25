@@ -50,7 +50,7 @@
 
 .logo-link {
   display: inline-block;
-  width: 220px; // Adjust based on your actual logo size
+  width: 230px; // Adjust based on your actual logo size
   height: 100px; // Adjust based on your actual logo size
 }
 
@@ -60,6 +60,11 @@
   background-image: url('/assets/logo.png'); // Adjust path as necessary
   background-size: cover;
   background-position: center;
+  border-radius: 15px;
+}
+
+.burger-nav-item {
+  margin-bottom: 10px; /* Adjust the value as needed */
 }
 
 @media (max-width: 1300px) {
