@@ -1,0 +1,63 @@
+<div class="aboutme-container">
+  <div class="background-greenneon">
+    <h2>Languages and Tools</h2>
+    <div class="languages-tools">
+      <img alt="SwiftUI" src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" />
+      <img alt="Ruby" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg" />
+      <img alt="Rails" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" />
+      <img alt="Git" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" />
+      <img alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" />
+      <img alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" />
+      <img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
+      <img alt="NodeJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+      <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
+      <img alt="Bash" src="https://cdn3.brettterpstra.com/uploads/2015/02/terminal-longshadow.png" />
+      <img alt="Heroku" src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" />
+      <img alt="SQL" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" />
+    </div>
+  </div>
+  <div class="background-greenneon">
+    <h1>Welcome to Laurent Lefebvre's Personal Portfolio</h1>
+    <div class="horizontal">
+      <div class="img-container">
+        <%= image_tag 'doggo.jpg', class: 'img-rounded-rectangle', alt: 'Picture of Laurent Lefebvre' %>
+      </div>
+      <div class="text-content">
+        <p class="left-align">
+          I am a dynamic professional boasting an impressive blend of academic achievements and hands-on experience in software development and sports business. Graduating from a Web Development Bootcamp and with a Master of Science in Sport Management from the University of San Francisco, as well as a Bachelor of Commerce from McGill University, I have demonstrated exceptional academic prowess alongside a commitment to practical application through diverse professional positions and leadership roles.<br><br>
+
+          With technical skills spanning SwiftUI, Ruby on Rails, HTML, CSS, JavaScript, SQL, Python, and more, I excel in creating innovative solutions. My personal coding projects in sports showcase my ability to blend creativity with technical skills, developing applications that serve niche markets with precision and user-centric design. My proficiency in software development is complemented by certifications, including SwiftUI Coding, highlighting my continuous pursuit of learning and excellence.<br><br>
+
+          My leadership and team management skills were honed as President of the USF Sport Marketing Association, where I led initiatives to enhance the organization's digital presence and engage members through meaningful events. My role as a Fan Experience Associate with the LA Kings and involvement in event operations for high-profile events like Bellator MMA, ISA World Games, and LA Sports Council further reflect my versatility and capacity to contribute to diverse teams and projects.<br><br>
+
+          As a former competitive alpine skier and an enthusiast of powerlifting, long-distance running, and adventure sports, I embody a spirit of determination and passion both professionally and personally. My interest in wine, evidenced by a WSET Level 2 Award, along with my ventures into crypto and NFT creation, illustrate a multifaceted individual keen on exploring new frontiers.<br><br>
+
+          My journey is a testament to my adaptability, ambition, and unwavering commitment to excellence, positioning me as a valuable asset to any team or project.
+        </p>
+        <a href="https://lefebvrelaurent.com" target="_blank" class="light-green-background-button">Check out my Wix Website now to<br>learn more about my background!</a>
+      </div>
+    </div>
+  </div>
+  <div class="background-greenneon">
+    <a href="https://www.linkedin.com/in/laurentlefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://www.instagram.com/laurent.d.lefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-square-instagram"></i></a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('turbo:load', function () {
+    function adjustImageSize() {
+      const imgContainer = document.querySelector('.img-container');
+      const textContent = document.querySelector('.text-content');
+      const img = imgContainer.querySelector('img');
+
+      if (textContent && img) {
+        img.style.height = `${textContent.offsetHeight}px`;
+        img.style.width = 'auto';
+      }
+    }
+
+    adjustImageSize();
+    window.addEventListener('resize', adjustImageSize);
+  });
+</script>

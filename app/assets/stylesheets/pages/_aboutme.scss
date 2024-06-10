@@ -1,0 +1,303 @@
+.aboutme-container {
+  height: calc(100vh - 100px); /* Take full height minus navbar */
+  overflow: hidden; /* Prevent container from scrolling horizontally */
+  position: relative; /* Ensure proper stacking context */
+
+  .body-content {
+    height: 100%; /* Take the full height */
+    overflow: hidden; /* Prevent overflow */
+  }
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 25px; /* Add padding for content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allow vertical scrolling */
+  position: fixed; /* Position fixed to ensure it scrolls correctly */
+  top: 100px; /* Adjust top to account for the navbar height */
+  left: 0;
+  right: 0;
+  z-index: 10; /* Ensure the z-index is lower than the navbar but high enough to be interactive */
+
+  background: linear-gradient(to right, rgb(0, 70, 65), rgb(0, 45, 40));
+  font-family: 'Futura', sans-serif;
+  text-align: center;
+
+  .horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: left;
+    max-width: 100%;
+    overflow: hidden;
+
+    .img-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 1 auto;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .text-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 800px; /* Increase the maximum width to take more horizontal space */
+      width: 100%;
+
+      .left-align {
+        text-align: left !important;
+        margin: 0 0 20px 0;
+        padding: 0;
+        font-size: 1.2rem;
+        width: 100%;
+      }
+
+      .light-green-background-button {
+        display: inline-block;
+        text-decoration: none;
+        background-color: rgba(0, 255, 221, 0.896);
+        color: rgba(0, 50, 50, 1);
+        padding: 20px 40px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease;
+        width: auto;
+        margin-top: 20px;
+        text-align: center;
+        white-space: pre-wrap;
+        align-self: center;
+
+        &:hover {
+          background-color: rgba(0, 205, 181, 1);
+          color: rgba(0, 40, 40, 1);
+        }
+      }
+    }
+  }
+
+  h1 {
+    color: rgba(0, 255, 210, 1.0);
+    padding: 15px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 2.5rem;
+  }
+
+  h2, h3, h4, h5, h6 {
+    color: rgba(0, 240, 200, 1.0);
+    padding-top: 20px;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 2.5rem;
+  }
+
+  p {
+    color: rgba(0, 210, 160, 1.0);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2rem;
+  }
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .background-greenneon {
+    background-color: rgba(0, 60, 60, 1.0);
+    padding: 50px;
+    width: 70%;
+    margin: 25px auto;
+    border-radius: 10px;
+    border: 1px solid #00ffbb;
+    box-shadow: 0 0 15px rgba(0, 100, 100, 1);
+  }
+
+  .social-buttons {
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(0, 255, 221, 0.896);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+    font-size: 3rem;
+
+    &:hover {
+      background-color: rgba(0, 205, 181, 1);
+      color: rgba(0, 40, 40, 1);
+    }
+  }
+
+  .languages-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .aboutme-container {
+    .container {
+      width: 800px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 95%;
+    }
+
+    .social-buttons {
+      font-size: 2.9rem;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .aboutme-container {
+    .container {
+      width: 700px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 90%;
+    }
+
+    .social-buttons {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .aboutme-container {
+    .container {
+      width: 500px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 80%;
+    }
+
+    .social-buttons {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .aboutme-container {
+    .container {
+      width: 300px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 70%;
+    }
+
+    .social-buttons {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media (max-height: 950px) {
+  .aboutme-container {
+    .container {
+      width: 800px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 90%;
+    }
+
+    .social-buttons {
+      font-size: 2.6rem;
+    }
+  }
+}
+
+@media (max-height: 880px) {
+  .aboutme-container {
+    .container {
+      width: 700px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 80%;
+    }
+
+    .social-buttons {
+      font-size: 2.3rem;
+    }
+  }
+}
+
+@media (max-height: 675px) {
+  .aboutme-container {
+    .container {
+      width: 500px;
+    }
+
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+    }
+
+    body {
+      font-size: 70%;
+    }
+
+    .social-buttons {
+      font-size: 2rem;
+    }
+  }
+}

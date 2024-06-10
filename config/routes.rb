@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#home"
-  get 'education', to: 'pages#education'
-  get 'experience', to: 'pages#experience'
-  get 'contracts', to: 'pages#contracts'
+  get 'aboutme', to: 'pages#aboutme'
+  get 'project', to: 'pages#project'
   get 'contact', to: 'pages#contact'
   get "up" => "rails/health#show", as: :rails_health_check
 end
