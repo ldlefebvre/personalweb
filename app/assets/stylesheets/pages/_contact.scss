@@ -1,4 +1,4 @@
-.project-container {
+.contact-container {
   height: calc(100vh - 100px); /* Take full height minus navbar */
   overflow: hidden; /* Prevent container from scrolling horizontally */
   position: relative; /* Ensure proper stacking context */
@@ -16,13 +16,7 @@
   text-align: center;
   font-family: 'Futura', sans-serif;
 
-  h1 {
-    color: rgba(0, 255, 210, 1.0);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-
-  .main-project, .other-projects {
+  .cta-section, .contact-details, .contact-form, .contact-map {
     background-color: rgba(0, 60, 60, 1.0);
     padding: 30px;
     margin: 25px auto;
@@ -30,88 +24,231 @@
     border: 1px solid #00ffbb;
     box-shadow: 0 0 15px rgba(0, 100, 100, 1);
     width: 80%;
-    max-width: 1200px;
+    max-width: 800px;
   }
 
-  .main-project h2, .other-projects h2 {
+  .contact-details h1, .cta-section h2, .contact-form h2, .contact-map h2 {
     color: rgba(0, 255, 210, 1.0);
     padding: 10px 0;
     font-family: 'Oxygen', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
-  .main-project p, .other-projects p {
+  .contact-details p, .cta-section p, .contact-form label, .contact-map p {
     color: rgba(0, 210, 160, 1.0);
     font-family: 'Oxygen', sans-serif;
     font-size: 1.2rem;
     margin: 10px 0;
   }
 
-  .project-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgba(0, 255, 221, 0.896);
-    color: rgba(0, 50, 50, 1);
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  .contact-details a {
+    color: rgba(210, 255, 240, 1.0); /* Change to a closer to white but slightly green color */
+  }
 
-    &:hover {
-      background-color: rgba(0, 205, 181, 1);
+  .cta-section {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .cta-message {
+      font-size: 1.5rem;
+      color: rgba(0, 210, 160, 1.0); /* A slightly different shade to distinguish from the title */
+      font-weight: bold;
+      margin: 20px 40px; /* Add more margin */
     }
   }
 
-  .project-image {
-    width: 100%;
-    height: auto;
+  .contact-form {
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .form-group {
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        input, textarea {
+          width: 100%;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #00ffbb;
+          background-color: rgba(0, 70, 65, 1.0);
+          color: #fff;
+        }
+      }
+
+      .submit-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(0, 255, 221, 0.896);
+        color: rgba(0, 50, 50, 1);
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 205, 181, 1);
+        }
+      }
+    }
+  }
+
+  .contact-map {
+    iframe {
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      height: 400px;
+    }
+  }
+
+  .notification {
+    position: fixed;
+    bottom: 30px; /* Reduced bottom space */
+    right: 60px; /* Increased right space */
+    background-color: rgba(0, 255, 221, 0.896);
+    color: rgba(0, 50, 50, 1);
+    padding: 15px 30px;
     border-radius: 10px;
-    margin-top: 15px;
-    box-shadow: 0 0 10px rgba(0, 50, 50, 1);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    z-index: 1000; /* Ensure it's on top */
   }
 
-  .main-project .project-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  .notification.show {
+    opacity: 1;
   }
 
-  .main-project .section {
-    flex: 1 1 calc(50% - 20px);
-    background-color: rgba(0, 45, 40, 1.0);
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 50, 50, 1);
-  }
-
-  .other-projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .other-projects .project {
-    flex: 1 1 calc(50% - 20px);
-    background-color: rgba(0, 45, 40, 1.0);
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 50, 50, 1);
-    text-align: left;
+  @media (max-width: 1120px) {
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 85%;
+      padding: 25px;
+    }
   }
 
   @media (max-width: 960px) {
-    .main-project .section, .other-projects .project {
-      flex: 1 1 calc(100% - 20px);
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .contact-details h1, .cta-section h2, .contact-form h2, .contact-map h2 {
+      font-size: 1.8rem;
+    }
+
+    .contact-details p, .cta-section p, .contact-form label {
+      font-size: 1.1rem;
+    }
+
+    .contact-form {
+      form {
+        .form-group {
+          max-width: 550px;
+        }
+
+        .submit-button {
+          font-size: 1.1rem;
+        }
+      }
     }
   }
 
   @media (max-width: 720px) {
-    .main-project .section, .other-projects .project {
-      flex: 1 1 100%;
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 95%;
+      padding: 15px;
+    }
+
+    .contact-details h1, .cta-section h2, .contact-form h2, .contact-map h2 {
+      font-size: 1.6rem;
+    }
+
+    .contact-details p, .cta-section p, .contact-form label {
+      font-size: 1rem;
+    }
+
+    .contact-form {
+      form {
+        .form-group {
+          max-width: 500px;
+        }
+
+        .submit-button {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .contact-map iframe {
+      height: 350px;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .contact-details h1, .cta-section h2, .contact-form h2, .contact-map h2 {
+      font-size: 1.4rem;
+    }
+
+    .contact-details p, .cta-section p, .contact-form label {
+      font-size: 0.9rem;
+    }
+
+    .contact-form {
+      form {
+        .form-group {
+          max-width: 450px;
+        }
+
+        .submit-button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .contact-map iframe {
+      height: 300px;
+    }
+  }
+
+  @media (max-height: 950px) {
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 85%;
+    }
+  }
+
+  @media (max-height: 880px) {
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 90%;
+    }
+  }
+
+  @media (max-height: 675px) {
+    .cta-section, .contact-details, .contact-form, .contact-map {
+      width: 95%;
+    }
+
+    .contact-map iframe {
+      height: 350px;
     }
   }
 }

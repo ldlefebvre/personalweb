@@ -1,38 +1,91 @@
 <div class="project-container">
-  <div class="main-project project-box">
-    <h1>Exad</h1>
-    <p>Marketplace specializing in exotic, adrenaline-fueled adventures and extreme sports.</p>
-    <a href="https://testflight.apple.com/join/O19OHNWn" class="project-link">Try it out on TestFlight</a>
-    <div class="project-details">
-      <div class="section">
-        <h2>Customer Side</h2>
-        <p>Find activities near you, book easily, and enjoy a seamless experience with full Stripe integration and automated invoicing.</p>
-        <%= image_tag 'customer_side_image.jpg', alt: 'Customer Side Image', class: 'project-image' %>
+  <div class="project-box exad-box">
+    <h2>EXAD</h2>
+    <img src="<%= asset_path('project/exad_logo.png') %>" alt="EXAD Logo" class="project-logo">
+    <p>EXAD is the main project I have been working on. It is a marketplace specializing in exotic, adrenaline-fueled adventures and extreme sports.</p>
+    <div class="button-container">
+      <a href="https://testflight.apple.com/join/O19OHNWn" class="project-link" target="_blank">View EXAD on TestFlight</a>
+      <a href="#exad-details" class="project-details-link">Discover More</a>
+    </div>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-box">
+      <h2>Ripped Utopia</h2>
+      <img src="<%= asset_path('project/ripped_utopia_logo.png') %>" alt="Ripped Utopia Logo" class="project-logo">
+      <p>Fitness & Powerlifting app that contains over 1,300 exercises and personalized workouts. Enables progress tracking and data syncing between an online and offline database.</p>
+      <div class="button-container">
+        <a href="https://testflight.apple.com/join/QhfvwyzW" class="project-link" target="_blank">View Ripped Utopia on TestFlight</a>
+        <a href="#ripped-utopia-details" class="project-details-link">Discover More</a>
       </div>
-      <div class="section">
-        <h2>Business Side</h2>
-        <p>Manage your business, track clients, and control your reputation all in one place.</p>
-        <%= image_tag 'business_side_image.jpg', alt: 'Business Side Image', class: 'project-image' %>
+    </div>
+
+    <div class="project-box">
+      <h2>USF Sport Marketing</h2>
+      <img src="<%= asset_path('project/SMA_logo.png') %>" alt="USF Sport Marketing Logo" class="project-logo">
+      <p>University app designed to enhance the visibility of the association and improve communication channels to effectively reach our target demographic.</p>
+      <div class="button-container">
+        <a href="https://apps.apple.com/ca/app/usf-sport-marketing/id6444582116" class="project-link" target="_blank">View USF Sport Marketing on App Store</a>
+        <a href="#usf-sport-marketing-details" class="project-details-link">Discover More</a>
+      </div>
+    </div>
+
+    <div class="project-box">
+      <h2>EasyFind</h2>
+      <img src="<%= asset_path('project/easyfind_logo.png') %>" alt="EasyFind Logo" class="project-logo">
+      <p>Phone app for discovering local activities. The app was created to remove analysis paralysis and give newcomers in a city some interesting attractions, events, movies, and restaurants.</p>
+      <div class="button-container">
+        <a href="https://www.easyfind.click/" class="project-link" target="_blank">View EasyFind Website</a>
+        <a href="#easyfind-details" class="project-details-link">Discover More</a>
+      </div>
+    </div>
+
+    <div class="project-box">
+      <h2>Personal Website (Wix)</h2>
+      <img src="<%= asset_path('project/wix_logo.png') %>" alt="Personal Website Logo" class="project-logo">
+      <p>My personal website showcases my background, schooling, professional experience, event-based contracts, and a contact page. It's a comprehensive display of my work and achievements.</p>
+      <div class="button-container">
+        <a href="https://lefebvrelaurent.com" class="project-link" target="_blank">View Personal Website</a>
+        <a href="#personal-website-details" class="project-details-link">Discover More</a>
       </div>
     </div>
   </div>
 
-  <div class="project-box">
-    <h2>Ripped Utopia</h2>
-    <p>Fitness & Powerlifting app with over 1,300 exercises and personalized workouts. Enables progress tracking and data syncing.</p>
-    <a href="https://testflight.apple.com/join/QhfvwyzW" class="project-link">Try it out on TestFlight</a>
-    <%= image_tag 'ripped_utopia_image.jpg', alt: 'Ripped Utopia Image', class: 'project-image' %>
+  <div id="exad-details" class="project-details-section">
+    <h2>EXAD Details</h2>
+    <div class="section">
+      <h3>Customer Side</h3>
+      <p>EXAD is the main project I have been working on, focusing on providing an excellent user experience for customers looking for extreme and adventure sports experiences.</p>
+      <% if Rails.application.assets.find_asset('project/customer_side_image.png') %>
+        <img src="<%= asset_path('project/customer_side_image.png') %>" alt="EXAD Customer Side" class="project-image">
+      <% end %>
+    </div>
+    <div class="section">
+      <h3>Business Side</h3>
+      <p>EXAD also includes a comprehensive backend for businesses to manage their offerings and engage with customers effectively.</p>
+      <% if Rails.application.assets.find_asset('project/business_side_image.png') %>
+        <img src="<%= asset_path('project/business_side_image.png') %>" alt="EXAD Business Side" class="project-image">
+      <% end %>
+    </div>
   </div>
-  <div class="project-box">
-    <h2>USF Sport Marketing</h2>
-    <p>University app designed to enhance the visibility of the association and improve communication channels.</p>
-    <a href="https://apps.apple.com/ca/app/usf-sport-marketing/id6444582116" class="project-link">Find it on the Apple Store</a>
-    <%= image_tag 'usf_sport_marketing_image.jpg', alt: 'USF Sport Marketing Image', class: 'project-image' %>
+
+  <div id="ripped-utopia-details" class="project-details-section">
+    <h2>Ripped Utopia Details</h2>
+    <p>Ripped Utopia is a comprehensive fitness tracking app designed to help users achieve their fitness goals with personalized workout plans and progress tracking.</p>
   </div>
-  <div class="project-box">
-    <h2>EasyFind</h2>
-    <p>Phone app for discovering local activities, events, movies, and restaurants.</p>
-    <a href="https://www.easyfind.click/" class="project-link">Find the software here</a>
-    <%= image_tag 'easyfind_image.jpg', alt: 'EasyFind Image', class: 'project-image' %>
+
+  <div id="usf-sport-marketing-details" class="project-details-section">
+    <h2>USF Sport Marketing Details</h2>
+    <p>The USF Sport Marketing project aims to enhance the digital presence of the USF Sport Marketing Association through strategic marketing initiatives and engaging content.</p>
+  </div>
+
+  <div id="easyfind-details" class="project-details-section">
+    <h2>EasyFind Details</h2>
+    <p>EasyFind is a user-friendly app that helps users locate services and products quickly and efficiently through an intuitive interface and powerful search capabilities.</p>
+  </div>
+
+  <div id="personal-website-details" class="project-details-section">
+    <h2>Personal Website Details</h2>
+    <p>My personal website showcases my background, schooling, professional experience, event-based contracts, and a contact page. It's a comprehensive portfolio of my work and achievements.</p>
   </div>
 </div>

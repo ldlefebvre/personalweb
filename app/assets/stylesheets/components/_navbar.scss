@@ -3,7 +3,10 @@
   background: linear-gradient(to right, rgb(0, 120, 115), rgb(0, 95, 90));
   color: rgba(176, 255, 235, 1);
   padding-top: 20px;
-  height: 100px
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  // position: fixed;
   // padding-bottom: 30px;
 }
 .nav-item {
@@ -21,12 +24,20 @@
   flex-grow: 0;
 }
 
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+//   transform: translateX(-50px); /* Move only the content slightly to the left */
+}
+
 .nav-pic {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-right: 30px;
-  margin-left: 60px;
+  margin-right: 110px;
+  margin-left: 30px;
   margin-bottom: 8px;
 }
 
@@ -43,8 +54,8 @@
 //Left logo
 .logo {
   transform: translateY(-5px);
-  margin-right: 20px;
-  margin-left: 30px;
+  // margin-right: 0px;
+  // margin-left: 30px;
 }
 
 .tabs-margin {
