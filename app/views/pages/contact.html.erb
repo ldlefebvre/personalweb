@@ -1,3 +1,54 @@
 <div class="contact-container">
-
+  <div class="cta-section">
+    <h2>Work With Me</h2>
+    <p class="cta-message">
+      Are you looking for a passionate and skilled iOS developer or a versatile full-stack engineer? Look no further! I bring a wealth of experience and a commitment to excellence in every project. Whether it's a full-time position, freelance opportunity, or project-based work, I'm ready to collaborate and bring your ideas to life. Let's create something amazing together!
+    </p>
+  </div>
+  <div class="contact-form">
+    <h2>Send Me a Message</h2>
+    <%= form_with url: contact_path, method: :post, data: { turbo: "true" }, class: "form" do %>
+      <div class="form-group">
+        <%= label_tag :name, 'Name:' %>
+        <%= text_field_tag :name, nil, required: true %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :email, 'Email:' %>
+        <%= email_field_tag :email, nil, required: true %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :phone, 'Phone (optional):' %>
+        <%= telephone_field_tag :phone %>
+      </div>
+      <div class="form-group">
+        <%= label_tag :message, 'Message:' %>
+        <%= text_area_tag :message, nil, rows: 5, required: true %>
+      </div>
+      <%= submit_tag 'Send Message', class: "submit-button" %>
+    <% end %>
+  </div>
+  <div class="contact-details">
+    <h1>Contact Me</h1>
+    <p>Email: <a href="mailto:laurent.d.lefebvre@gmail.com">laurent.d.lefebvre@gmail.com</a></p>
+    <p>Phone: <a href="tel:+15147031856">+1 514 703 1856</a></p>
+  </div>
+  <div class="contact-map">
+    <h2>Location</h2>
+    <p>Rue Marquette, Montreal, Quebec, Canada</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.633769310949!2d-73.5800!3d45.5379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a283b4b92f7%3A0x9bb61d5e1fb5c75e!2sRue%20Marquette%2C%20Montr%C3%A9al%2C%20QC%2C%20Canada!5e0!3m2!1sen!2sus!4v1627357746014!5m2!1sen!2sus&markers=color:red%7Clabel:R%7C45.5379,-73.5800&center=45.5379,-73.5800&zoom=15" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+  <div id="notification" class="notification">Your message has been sent successfully!</div>
 </div>
+
+<script>
+  document.addEventListener('turbo:submit-end', (event) => {
+    if (event.detail.success) {
+      document.querySelector('.form').reset();
+      const notification = document.getElementById('notification');
+      notification.classList.add('show');
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 5000); // Notification will disappear after 5 seconds
+    }
+  });
+</script>
