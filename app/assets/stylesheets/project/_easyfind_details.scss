@@ -1,0 +1,46 @@
+#easyfind-details {
+  .project-details-section {
+    display: none; /* Hide details initially */
+    background-color: rgba(0, 60, 60, 1.0);
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 10px;
+    border: 1px solid #00ffbb;
+    box-shadow: 0 0 15px rgba(0, 100, 100, 1);
+    text-align: left;
+    color: rgba(0, 255, 210, 1.0);
+    font-family: 'Oxygen', sans-serif;
+    max-width: 800px;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .nav-button {
+        padding: 10px 20px;
+        background-color: rgba(0, 255, 221, 0.896);
+        color: rgba(0, 50, 50, 1);
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 205, 181, 1);
+        }
+      }
+    }
+  }
+}

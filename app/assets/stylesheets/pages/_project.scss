@@ -41,9 +41,11 @@
 
     .project-logo {
       width: 150px;
-      height: 150px;
+      height: auto; /* Maintain aspect ratio */
       margin: 20px auto; /* Adjust margin for better spacing */
       display: block;
+      border-radius: 10px; /* Slightly round the corners of logos */
+      max-width: 100%; /* Ensure the logo fits within its container */
     }
 
     .button-container {
@@ -52,7 +54,7 @@
       align-items: center;
     }
 
-    .project-link {
+    .project-link, .project-details-link {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
@@ -68,64 +70,75 @@
         background-color: rgba(0, 205, 181, 1);
       }
     }
+  }
 
-    .project-details-link {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: rgba(0, 255, 221, 0.896);
-      color: rgba(0, 50, 50, 1);
-      font-size: 1.2rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      &:hover {
-        background-color: rgba(0, 205, 181, 1);
-      }
-    }
+  .details-delimiter {
+    width: 100%;
+    height: 2px;
+    background-color: #00ffbb;
+    margin: 40px 0;
   }
 
   .project-details-section {
     display: none; /* Hide details initially */
-    background-color: rgba(0, 60, 60, 1.0);
-    padding: 20px;
-    margin: 15px auto;
-    border-radius: 10px;
-    border: 1px solid #00ffbb;
-    box-shadow: 0 0 15px rgba(0, 100, 100, 1);
+    background-color: rgba(0, 45, 40, 1.0); /* Darker background for distinction */
+    padding: 30px;
+    margin: 30px auto;
+    border-radius: 15px;
+    border: 2px solid #00ffbb; /* Slightly thicker border */
+    box-shadow: 0 0 20px rgba(0, 150, 150, 1); /* More pronounced shadow */
     text-align: left;
     color: rgba(0, 255, 210, 1.0);
     font-family: 'Oxygen', sans-serif;
-    max-width: 800px;
+    max-width: 900px; /* Wider section */
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
+      font-size: 2.2rem;
+      margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
     }
 
     .section {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       h3 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
+        font-size: 1.7rem;
+        margin-bottom: 15px;
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
 
       .project-image {
         width: 100%;
         height: auto;
-        border-radius: 10px;
-        margin-top: 15px;
-        box-shadow: 0 0 10px rgba(0, 50, 50, 1);
+        border-radius: 15px;
+        margin-top: 20px;
+        box-shadow: 0 0 15px rgba(0, 50, 50, 1);
+      }
+    }
+
+    .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      .nav-button {
+        padding: 10px 20px;
+        background-color: rgba(0, 255, 221, 0.896);
+        color: rgba(0, 50, 50, 1);
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: rgba(0, 205, 181, 1);
+        }
       }
     }
   }
@@ -162,8 +175,12 @@
       font-size: 1.1rem;
     }
 
-    .project-box .project-link, .project-details-link {
+    .project-box .project-link, .project-details-link, .nav-button {
       font-size: 1.1rem;
+    }
+
+    .project-logo {
+      width: 120px;
     }
   }
 
@@ -188,8 +205,12 @@
       font-size: 1rem;
     }
 
-    .project-box .project-link, .project-details-link {
+    .project-box .project-link, .project-details-link, .nav-button {
       font-size: 1rem;
+    }
+
+    .project-logo {
+      width: 100px;
     }
   }
 
@@ -214,8 +235,12 @@
       font-size: 0.9rem;
     }
 
-    .project-box .project-link, .project-details-link {
+    .project-box .project-link, .project-details-link, .nav-button {
       font-size: 0.9rem;
+    }
+
+    .project-logo {
+      width: 80px;
     }
   }
 
@@ -237,8 +262,12 @@
       font-size: 0.8rem;
     }
 
-    .project-box .project-link, .project-details-link {
+    .project-box .project-link, .project-details-link, .nav-button {
       font-size: 0.8rem;
+    }
+
+    .project-logo {
+      width: 60px;
     }
   }
 
