@@ -105,5 +105,5 @@ Rails.application.configure do
   # config.assets.js_compressor = Uglifier.new(harmony: true)
   config.assets.js_compressor = :terser
 
-
+  config.force_ssl = true
 end
