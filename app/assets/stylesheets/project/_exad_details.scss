@@ -128,14 +128,13 @@
   }
 
   .navigation-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
 
     .nav-button {
-      margin-inline: 30px;
       padding: 15px 30px;
       background-color: #003028;
       color: rgb(0, 255, 157);
@@ -156,6 +155,16 @@
         font-size: 1.1rem;
         padding: 10px 20px;
       }
+    }
+
+    .left-button {
+      justify-self: end;
+      margin-right: 15px;
+    }
+
+    .right-button {
+      justify-self: start;
+      margin-left: 15px;
     }
   }
 }
