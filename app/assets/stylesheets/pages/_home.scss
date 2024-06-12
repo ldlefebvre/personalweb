@@ -16,6 +16,7 @@
   top: 0;
   left: 0;
   z-index: -1; /* Keep the video in the background */
+  pointer-events: none; /* Disable interaction with the video */
 }
 
 .home-content {
