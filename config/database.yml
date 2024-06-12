@@ -30,4 +30,4 @@ test:
 production:
   <<: *default
   database: personalweb_production
-  # username and password are not specified
+  url: <%= ENV['DATABASE_URL'] %>
