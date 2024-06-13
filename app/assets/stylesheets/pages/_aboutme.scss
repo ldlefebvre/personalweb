@@ -37,13 +37,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      flex: 0 1 auto;
+      flex: 1 1 auto;
+      max-width: 50%; /* Ensure the image container doesn't get too wide */
     }
 
     .img-rounded-rectangle {
+      width: 100%;
       height: auto;
-      width: auto;
-      max-width: 100%;
       border-radius: 15px;
       object-fit: cover;
     }
@@ -69,8 +69,8 @@
         text-decoration: none;
         background-color: rgba(0, 255, 221, 0.896);
         color: rgba(0, 50, 50, 1);
-        padding: 20px 40px;
-        font-size: 1.5rem;
+        padding: 10px 20px; /* Adjust padding for better responsiveness */
+        font-size: 1rem; /* Adjust font size for better responsiveness */
         font-weight: bold;
         border-radius: 10px;
         box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
@@ -144,16 +144,57 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 40px; /* Increased gap for more space between language logos */
+    padding: 40px 0; /* Increased padding for better visual spacing */
 
-    img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
+    .language-tool {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-bottom: 10px; /* Add some space between image and text */
+      }
+
+      span {
+        font-size: 0.9rem; /* Adjust font size for better readability */
+        color: rgba(0, 255, 221, 0.896); /* Match text color to theme */
+      }
     }
   }
 }
+
+@media (min-width: 2334px) {
+  .aboutme-container .img-container {
+    max-width: 40%; /* Reduce max-width for larger screens */
+  }
+}
+@media (max-width: 2334px) {
+  .img-rounded-rectangle {
+    height: auto;
+    width: 100%;
+    max-height: 500px; /* Ensure the image doesn't get too tall */
+  }
+}
+@media (max-width: 1900px) {
+  .img-rounded-rectangle {
+    height: auto;
+    width: 100%;
+    max-height: 450px; /* Ensure the image doesn't get too tall */
+  }
+}
+@media (max-width: 1500px) {
+  .img-rounded-rectangle {
+    height: auto;
+    width: 100%;
+    max-height: 400px; /* Ensure the image doesn't get too tall */
+  }
+}
+
 
 @media (max-width: 1120px) {
   .aboutme-container {
@@ -164,14 +205,24 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 300px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 95%;
     }
 
     .social-buttons {
       font-size: 2.9rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.5em;
+    }
+    p {
+      font-size: 20px;
+    }
+    .linking {
+      font-size: 1.5em;
     }
   }
 }
@@ -185,14 +236,24 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 250px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 90%;
     }
 
     .social-buttons {
       font-size: 2.6rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.3em;
+    }
+    p {
+      font-size: 15px;
+    }
+    .linking {
+      font-size: 1.3em;
     }
   }
 }
@@ -206,14 +267,24 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 200px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 80%;
     }
 
     .social-buttons {
       font-size: 2.3rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.1em;
+    }
+    p {
+      font-size: 10px;
+    }
+    .linking {
+      font-size: 1.1em;
     }
   }
 }
@@ -227,14 +298,34 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 150px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 70%;
     }
 
     .social-buttons {
       font-size: 2rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1em;
+    }
+    p {
+      font-size: 8px;
+    }
+    .linking {
+      font-size: 0.8em;
+    }
+  }
+}
+
+@media (max-width: 355px) {
+  .aboutme-container {
+    .img-rounded-rectangle {
+      height: auto;
+      width: 100%;
+      max-height: 100px; /* Ensure the image doesn't get too tall */
     }
   }
 }
@@ -248,9 +339,10 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 300px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 90%;
     }
 
@@ -269,9 +361,10 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 250px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 80%;
     }
 
@@ -290,9 +383,10 @@
     .img-rounded-rectangle {
       height: auto;
       width: 100%;
+      max-height: 200px; /* Ensure the image doesn't get too tall */
     }
 
-    body {
+    .body-content {
       font-size: 70%;
     }
 

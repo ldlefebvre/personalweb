@@ -1,3 +1,4 @@
+# config/application.rb
 require_relative "boot"
 
 require "rails/all"
@@ -30,5 +31,12 @@ module Personalweb
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Add rack-rewrite middleware for domain redirection
+    config.middleware.insert_before(Rack::Runtime, Rack::Rewrite) do
+      r301 %r{.*}, 'https://www.laurentlefebvre.me$&', if: Proc.new { |rack_env|
+        rack_env['SERVER_NAME'] == 'laurentlefebvre.me'
+      }
+    end
   end
 end

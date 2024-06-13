@@ -93,6 +93,12 @@
       flex: 1 1 calc(50% - 20px);
       max-width: 48%;
     }
+    @media (max-width: 710px) {
+      .project-box {
+        flex: 1;
+        max-width: 96%;
+      }
+    }
   }
 
   @media (max-width: 1120px) {

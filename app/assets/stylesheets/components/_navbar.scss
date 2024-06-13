@@ -38,7 +38,7 @@
   height: 80px;
   border-radius: 50%;
   margin-right: 110px;
-  margin-left: 50px;
+  margin-left: 40px;
   margin-bottom: 8px;
 }
 
@@ -73,6 +73,7 @@
   display: inline-block;
   width: 200px; // Adjust based on your actual logo size
   height: 80px; // Adjust based on your actual logo size
+  margin-right: 50px;
 }
 
 //Left logo
@@ -92,6 +93,15 @@
 
 @media (max-width: 1300px) {
   /* For a screen < 960px, this CSS will be read */
+  .logo-image {
+    background-image: url('/assets/logosquare.png'); // Adjust path as necessary
+  }
+  .logo-link {
+    width: 80px; // Adjust based on your actual logo size
+    height: 80px; // Adjust based on your actual logo size
+    margin-left: 80px;
+    margin-right: 60px;
+  }
   .nav-pic {
     width: 50px;
     height: 50px;
@@ -116,15 +126,7 @@
 }
 
 @media (max-width: 1220px) {
-  .logo-image {
-    background-image: url('/assets/logosquare.png'); // Adjust path as necessary
-  }
-  .logo-link {
-    width: 80px; // Adjust based on your actual logo size
-    height: 80px; // Adjust based on your actual logo size
-    margin-left: 80px;
-    margin-right: 15px;
-  }
+
   .logo {
     transform: translateY(-2.5px);
   }
@@ -205,6 +207,10 @@
   .navbar-web {
     padding-top: 20px;
   }
+
+  // .tabs-margin {
+  //   margin-inline: 0px;
+  // }
 }
 
 @media (max-width: 740px) {
@@ -213,5 +219,42 @@
   }
   .nav-pic {
     margin-right: 40px;
+  }
+}
+
+@media (max-width: 575px) {
+    .navbar-nav {
+      flex-direction: row !important;
+      justify-content: center;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav .nav-item {
+      text-align: center;
+      // margin: 0 10px; /* Adjust spacing between items */
+    }
+  .logo-link {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar-nav {
+    flex-direction: row !important;
+    justify-content: left;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+  .logo-link {
+    margin-left: 30px;
+    margin-right: 0px;
+  }
+  .nav-pic {
+    display: none;
   }
 }

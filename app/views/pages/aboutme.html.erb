@@ -2,18 +2,54 @@
   <div class="background-greenneon">
     <h2>Languages and Tools</h2>
     <div class="languages-tools">
-      <img alt="SwiftUI" src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" />
-      <img alt="Ruby" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg" />
-      <img alt="Rails" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" />
-      <img alt="Git" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" />
-      <img alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" />
-      <img alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" />
-      <img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
-      <img alt="NodeJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
-      <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
-      <img alt="Bash" src="https://cdn3.brettterpstra.com/uploads/2015/02/terminal-longshadow.png" />
-      <img alt="Heroku" src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" />
-      <img alt="SQL" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" />
+      <div class="language-tool">
+        <img alt="SwiftUI" src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" />
+        <span>SwiftUI</span>
+      </div>
+      <div class="language-tool">
+        <img alt="Ruby" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/ruby/ruby-original.svg" />
+        <span>Ruby</span>
+      </div>
+      <div class="language-tool">
+        <img alt="Rails" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rails/rails-original-wordmark.svg" />
+        <span>Rails</span>
+      </div>
+      <div class="language-tool">
+        <img alt="Git" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" />
+        <span>Git</span>
+      </div>
+      <div class="language-tool">
+        <img alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg" />
+        <span>HTML</span>
+      </div>
+      <div class="language-tool">
+        <img alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" />
+        <span>CSS</span>
+      </div>
+      <div class="language-tool">
+        <img alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg" />
+        <span>JavaScript</span>
+      </div>
+      <div class="language-tool">
+        <img alt="NodeJS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+        <span>NodeJS</span>
+      </div>
+      <div class="language-tool">
+        <img alt="Python" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
+        <span>Python</span>
+      </div>
+      <div class="language-tool">
+        <img alt="Bash" src="https://cdn3.brettterpstra.com/uploads/2015/02/terminal-longshadow.png" />
+        <span>Bash</span>
+      </div>
+      <div class="language-tool">
+        <img alt="Heroku" src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" />
+        <span>Heroku</span>
+      </div>
+      <div class="language-tool">
+        <img alt="SQL" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" />
+        <span>SQL</span>
+      </div>
     </div>
   </div>
   <div class="background-greenneon">
@@ -34,7 +70,7 @@
 
           My journey is a testament to my adaptability, ambition, and unwavering commitment to excellence, positioning me as a valuable asset to any team or project.
         </p>
-        <%= link_to "Check out my Projects now to<br>learn more about my experience!".html_safe, project_path, class: 'light-green-background-button' %>
+        <%= link_to "Check out my Projects now to<br>learn more about my experience!".html_safe, project_path, class: 'light-green-background-button linking' %>
       </div>
     </div>
   </div>
@@ -42,22 +78,24 @@
     <a href="https://www.linkedin.com/in/laurentlefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-linkedin"></i></a>
     <a href="https://www.instagram.com/laurent.d.lefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-square-instagram"></i></a>
   </div>
-</div>
+  <script>
+    document.addEventListener('turbo:load', function () {
+      function adjustImageSize() {
+        const imgContainer = document.querySelector('.img-container');
+        const textContent = document.querySelector('.text-content');
+        const img = imgContainer.querySelector('img');
 
-<script>
-  document.addEventListener('turbo:load', function () {
-    function adjustImageSize() {
-      const imgContainer = document.querySelector('.img-container');
-      const textContent = document.querySelector('.text-content');
-      const img = imgContainer.querySelector('img');
-
-      if (textContent && img) {
-        img.style.height = `${textContent.offsetHeight}px`;
-        img.style.width = 'auto';
+        if (textContent && img) {
+          const textHeight = textContent.offsetHeight;
+          const aspectRatio = img.naturalWidth / img.naturalHeight;
+          const newWidth = textHeight * aspectRatio;
+          img.style.height = `${textHeight}px`;
+          img.style.width = `${newWidth}px`;
+        }
       }
-    }
 
-    adjustImageSize();
-    window.addEventListener('resize', adjustImageSize);
-  });
-</script>
+      adjustImageSize();
+      window.addEventListener('resize', adjustImageSize);
+    });
+  </script>
+</div>
