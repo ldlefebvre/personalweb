@@ -1,19 +1,11 @@
-<%# <h3>Pages#home</h3>
-<p>Find me in app/views/pages/home.html.erb</p> %>
-
-<%# <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo", class: "home-container" %>
-
 <div class="page-content">
   <div class="home-container">
-    <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo", preload: "auto" %>
+    <%= video_tag 'homevid.mov', autoplay: true, muted: true, loop: true, id: "myVideo", preload: "auto", playsinline: true %>
   </div>
 
   <div class="d-flex flex-column justify-content-center align-items-center vh-100 home-content">
-
     <%= image_tag('me.jpg', class: 'img-circle big-margin', alt: 'Circular Image of Laurent') %>
-
     <div class="d-flex flex-row big-margin dark-background">
-
       <h4 class="mx-3 lightgreen-capsule darkgreen-text">
         <%= link_to 'About Me', aboutme_path, class: "text-decoration-none", style: "color: inherit;" %>
       </h4>
@@ -28,9 +20,7 @@
       <h1>Hi I’m Laurent Lefebvre</h1>
       <h1>Welcome to my Personal Portfolio!</h1>
     </div>
-
     <h5 class="small-margin dark-background">laurent.d.lefebvre@gmail.com</h5>
-
     <div class="background-greenneon small-margin">
       <a href="https://www.linkedin.com/in/laurentlefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-linkedin"></i></a>
       <a href="https://www.instagram.com/laurent.d.lefebvre/" target="_blank" class="social-buttons"><i class="fa-brands fa-square-instagram"></i></a>
@@ -39,4 +29,34 @@
     </div>
     <p class="small-margin dark-background">©2024 by Laurent Lefebvre</p>
   </div>
+  <script>
+    document.addEventListener('turbo:load', function() {
+      const video = document.getElementById('myVideo');
+
+      if (video) {
+        // Ensure the video stays hidden from the video player
+        video.setAttribute('playsinline', ''); // Prevents video from entering fullscreen mode on mobile
+        video.removeAttribute('controls'); // Remove controls to prevent video player UI
+        video.setAttribute('muted', ''); // Mute the video
+        video.setAttribute('autoplay', ''); // Autoplay the video
+        video.setAttribute('loop', ''); // Loop the video
+
+        // Ensure video remains in the background
+        video.style.display = 'block';
+
+        // Add an event listener to ensure it doesn't appear in a video player
+        video.addEventListener('loadeddata', function() {
+          video.style.display = 'block';
+        });
+
+        video.addEventListener('play', function() {
+          video.style.display = 'block';
+        });
+
+        video.addEventListener('ended', function() {
+          video.play(); // Ensure the video restarts if it ends
+        });
+      }
+    });
+  </script>
 </div>
