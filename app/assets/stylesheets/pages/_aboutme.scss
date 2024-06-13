@@ -114,7 +114,7 @@
     display: inline-block;
   }
 
-  .background-greenneon {
+  .background-greenneon-about-me {
     background-color: rgba(0, 60, 60, 1.0);
     padding: 50px;
     width: 70%;
@@ -124,21 +124,21 @@
     box-shadow: 0 0 15px rgba(0, 100, 100, 1);
   }
 
-  .social-buttons {
-    display: inline-block;
-    text-decoration: none;
-    color: rgba(0, 255, 221, 0.896);
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease;
-    font-size: 3rem;
+  // .social-buttons {
+  //   display: inline-block;
+  //   text-decoration: none;
+  //   color: rgba(0, 255, 221, 0.896);
+  //   padding: 15px;
+  //   border-radius: 5px;
+  //   box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+  //   transition: 0.3s ease;
+  //   font-size: 3rem;
 
-    &:hover {
-      background-color: rgba(0, 205, 181, 1);
-      color: rgba(0, 40, 40, 1);
-    }
-  }
+  //   &:hover {
+  //     background-color: rgba(0, 205, 181, 1);
+  //     color: rgba(0, 40, 40, 1);
+  //   }
+  // }
 
   .languages-tools {
     display: flex;
@@ -212,9 +212,9 @@
       font-size: 95%;
     }
 
-    .social-buttons {
-      font-size: 2.9rem;
-    }
+    // .social-buttons {
+    //   font-size: 2.9rem;
+    // }
     h1, h2, h3, h4, h5, h6 {
       font-size: 1.5em;
     }
@@ -243,9 +243,9 @@
       font-size: 90%;
     }
 
-    .social-buttons {
-      font-size: 2.6rem;
-    }
+    // .social-buttons {
+    //   font-size: 2.6rem;
+    // }
     h1, h2, h3, h4, h5, h6 {
       font-size: 1.3em;
     }
@@ -274,9 +274,9 @@
       font-size: 80%;
     }
 
-    .social-buttons {
-      font-size: 2.3rem;
-    }
+    // .social-buttons {
+    //   font-size: 2.3rem;
+    // }
     h1, h2, h3, h4, h5, h6 {
       font-size: 1.1em;
     }
@@ -305,9 +305,9 @@
       font-size: 70%;
     }
 
-    .social-buttons {
-      font-size: 2rem;
-    }
+    // .social-buttons {
+    //   font-size: 2rem;
+    // }
     h1, h2, h3, h4, h5, h6 {
       font-size: 1em;
     }
@@ -346,9 +346,9 @@
       font-size: 90%;
     }
 
-    .social-buttons {
-      font-size: 2.6rem;
-    }
+    // .social-buttons {
+    //   font-size: 2.6rem;
+    // }
   }
 }
 
@@ -368,9 +368,9 @@
       font-size: 80%;
     }
 
-    .social-buttons {
-      font-size: 2.3rem;
-    }
+    // .social-buttons {
+    //   font-size: 2.3rem;
+    // }
   }
 }
 
@@ -390,8 +390,8 @@
       font-size: 70%;
     }
 
-    .social-buttons {
-      font-size: 2rem;
-    }
+    // .social-buttons {
+    //   font-size: 2rem;
+    // }
   }
 }
