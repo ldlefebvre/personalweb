@@ -2,12 +2,6 @@
   height: calc(100vh - 100px); /* Take full height minus navbar */
   overflow: hidden; /* Prevent container from scrolling horizontally */
   position: relative; /* Ensure proper stacking context */
-
-  .body-content {
-    height: 100%; /* Take the full height */
-    overflow: hidden; /* Prevent overflow */
-  }
-
   box-sizing: border-box;
   margin: 0;
   padding: 0 25px; /* Add padding for content */
@@ -18,10 +12,14 @@
   left: 0;
   right: 0;
   z-index: 10; /* Ensure the z-index is lower than the navbar but high enough to be interactive */
-
   background: linear-gradient(to right, rgb(0, 70, 65), rgb(0, 45, 40));
-  font-family: 'Futura', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   text-align: center;
+
+  .body-content {
+    height: 100%; /* Take the full height */
+    overflow: hidden; /* Prevent overflow */
+  }
 
   .horizontal {
     display: flex;
@@ -117,7 +115,7 @@
   .background-greenneon-about-me {
     background-color: rgba(0, 60, 60, 1.0);
     padding: 50px;
-    width: 70%;
+    width: 98%;
     margin: 25px auto;
     border-radius: 10px;
     border: 1px solid #00ffbb;
