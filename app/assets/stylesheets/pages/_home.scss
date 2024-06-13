@@ -17,6 +17,8 @@
   left: 0;
   z-index: -1; /* Keep the video in the background */
   pointer-events: none; /* Disable interaction with the video */
+  transform: translateZ(0); /* Ensure it stays in the background layer */
+  backface-visibility: hidden; /* Prevent it from appearing in front */
 }
 
 .home-content {
