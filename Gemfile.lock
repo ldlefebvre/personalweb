@@ -183,6 +183,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.10)
+    rack-rewrite (1.5.1)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -303,6 +304,7 @@ DEPENDENCIES
   jbuilder
   pg (~> 1.1)
   puma (>= 5.0)
+  rack-rewrite
   rails (~> 7.1.3, >= 7.1.3.2)
   rails_12factor
   sassc-rails

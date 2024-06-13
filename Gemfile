@@ -81,3 +81,5 @@ group :production do
 end
 
 gem 'terser', '>= 1.0.0'
+
+gem 'rack-rewrite'
