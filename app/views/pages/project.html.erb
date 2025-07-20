@@ -4,8 +4,20 @@
     <img src="<%= asset_path('project/exad_logo.png') %>" alt="EXAD Logo" class="project-logo">
     <p>EXAD is the main project I have been working on.<br><br> It is a marketplace specializing in exotic, adrenaline-fueled adventures and extreme sports.</p>
     <div class="button-container">
-      <a href="https://testflight.apple.com/join/O19OHNWn" class="project-link" target="_blank">View EXAD on TestFlight</a>
-      <a href="#exad-details" class="project-details-link">Discover Now!</a>
+      <a href="https://apps.apple.com/ca/app/exad/id1638689439" class="project-link" target="_blank">View EXAD on App Store</a>
+      <a href="#exad-details" class="project-details-link">View Project Details</a>
+    </div>
+  </div>
+
+  <div class="project-box nouri-box">
+    <h2>Nouri</h2>
+    <img src="<%= asset_path('project/logo_nouri.png') %>" alt="Nouri Logo" class="project-logo">
+    <p>Nouri is a personalized nutrition coach that uses Whoop or Oura data to improve mental and physical health. Whether you're aiming for better sleep, lower stress, more energy, or sharper focus, Nouri delivers 6–8 dietitian-backed food recommendations each day as well as a potential grocery cart — automatically tailored to your wearable metrics and long-term goals.</p>
+    <div class="button-container">
+      <a href="https://apps.apple.com/ca/app/nouri-healthy-groceries/id6469190528" class="project-link" target="_blank">View Nouri on App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.nourihealth.nouri.android&pli=1" class="project-link" target="_blank">View Nouri on Google Play</a>
+      <a href="https://www.nourihealth.com/" class="project-link" target="_blank">View Nouri Landing Page</a>
+      <a href="#nouri-details" class="project-details-link">View Project Details</a>
     </div>
   </div>
 
@@ -15,8 +27,8 @@
       <img src="<%= asset_path('project/ripped_utopia_logo.png') %>" alt="Ripped Utopia Logo" class="project-logo">
       <p>Fitness & Powerlifting app that contains over 1,300 exercises and personalized workouts. Enables progress tracking and data syncing between an online and offline database.</p>
       <div class="button-container">
-        <a href="https://testflight.apple.com/join/QhfvwyzW" class="project-link" target="_blank">View Ripped Utopia on TestFlight</a>
-        <a href="#ripped-utopia-details" class="project-details-link">Discover Now!</a>
+        <a href="https://apps.apple.com/ca/app/ripped-utopia/id6475913371" class="project-link" target="_blank">View Ripped Utopia on App Store</a>
+        <a href="#ripped-utopia-details" class="project-details-link">View Project Details</a>
       </div>
     </div>
 
@@ -26,7 +38,8 @@
       <p>University app designed to enhance the visibility of the association and improve communication channels to effectively reach our target demographic.</p>
       <div class="button-container">
         <a href="https://apps.apple.com/ca/app/usf-sport-marketing/id6444582116" class="project-link" target="_blank">View USF Sport Marketing on App Store</a>
-        <a href="#usf-sport-marketing-details" class="project-details-link">Discover Now!</a>
+        <a href="https://usfsportmarketingc.wixsite.com/usf-sport-marketing" class="project-link" target="_blank">View Website</a>
+        <a href="#usf-sport-marketing-details" class="project-details-link">View Project Details</a>
       </div>
     </div>
 
@@ -36,16 +49,16 @@
       <p>EasyFind, my final project for the Le Wagon Web Development Bootcamp, is a phone app that helps newcomers discover local attractions, events, movies, and restaurants using APIs like PredictHQ, Yelp, TMDB, and Mapbox.</p>
       <div class="button-container">
         <%# <a href="https://www.easyfind.click/" class="project-link" target="_blank">View EasyFind Phone App</a> %>
-        <a href="#easyfind-details" class="project-details-link">Discover Now!</a>
+        <a href="#easyfind-details" class="project-details-link">View Project Details</a>
       </div>
     </div>
 
     <div class="project-box">
-      <h2 style="margin-top: 30px;">Personal Website (Wix)</h2>
+      <h2 style="margin-top: 30px;">Old Personal Website (Wix)</h2>
       <img src="<%= asset_path('project/wix_logo.png') %>" alt="Personal Website Logo" class="project-logo">
-      <p>My personal website showcases my background, schooling, professional experience, event-based contracts, and a contact page. It's a comprehensive display of my work and achievements.</p>
+      <p>My previous personal website built on Wix that showcased my background, schooling, professional experience, event-based contracts, and contact information. This was my earlier portfolio before transitioning to this current showcase.</p>
       <div class="button-container">
-        <a href="https://lefebvrelaurent.com" class="project-link" target="_blank">View Personal Website</a>
+        <a href="https://laurentdlefebvre.wixsite.com/laurent-lefebvre" class="project-link" target="_blank">View Old Personal Website</a>
       </div>
     </div>
   </div>
@@ -53,6 +66,7 @@
   <div class="details-delimiter"></div>
 
   <%= render 'projects/exad_details' %>
+  <%= render 'projects/nouri_details' %>
   <%= render 'projects/ripped_utopia_details' %>
   <%= render 'projects/usf_sport_marketing_details' %>
   <%= render 'projects/easyfind_details' %>

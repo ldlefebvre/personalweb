@@ -1,0 +1,256 @@
+<div id="nouri-details" class="project-details-section">
+  <h2>Nouri Details</h2>
+
+  <!-- App Introduction -->
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Welcome to Nouri</h3>
+      <div class="image-grid">
+        <div class="image-wrapper">
+          <img src="<%= asset_path('project/nouri/onboarding/Splash.png') %>" alt="Nouri Splash Screen" class="nouri-image nouri-image-large">
+        </div>
+      </div>
+      <p>Nouri's elegant introduction to personalized nutrition coaching powered by wearable technology. The app seamlessly integrates with Whoop and Oura devices to transform your biometric data into actionable nutrition recommendations for optimal health and performance.</p>
+    </div>
+  </div>
+
+  <!-- Comprehensive Onboarding Flow - Grouped by Figma Organization -->
+  <h3 class="section-title">Personalized Setup Journey</h3>
+
+  <div class="card-section">
+    <div class="card">
+      <h3>Taste Discovery & Preference System</h3>
+      <div class="image-grid food-preference-grid">
+        <% ["Swipe Tastes.png", "Goûts.png", "Goûts (1).png", "Goûts (2).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/onboarding/#{img}") %>" alt="Nouri Taste Discovery" class="nouri-image nouri-image-scrollable">
+          </div>
+        <% end %>
+      </div>
+      <p>Revolutionary taste discovery system featuring intuitive swipe-based interactions and comprehensive preference mapping. Users explore diverse cuisine categories, ingredients, and flavor profiles to build a detailed taste DNA that ensures every recommendation resonates with their palate.</p>
+    </div>
+
+    <div class="card">
+      <h3>Advanced Taste Preference Analysis</h3>
+      <div class="image-grid">
+        <div class="image-wrapper">
+          <img src="<%= asset_path("project/nouri/onboarding/Goûts-6.png") %>" alt="Completed Taste Categories" class="nouri-image">
+        </div>
+        <div class="image-wrapper">
+          <img src="<%= asset_path("project/nouri/onboarding/Goûts2.png") %>" alt="Advanced Preference Setup" class="nouri-image">
+        </div>
+        <div class="image-wrapper">
+          <img src="<%= asset_path("project/nouri/onboarding/Restrictions2.png") %>" alt="Dietary Restrictions Analysis" class="nouri-image">
+        </div>
+      </div>
+      <p>Advanced preference analysis system that intelligently maps your taste DNA across multiple dimensions. The platform analyzes goal-setting patterns, identifies potential barriers to healthy eating, and creates personalized dietary frameworks that adapt to your lifestyle challenges and long-term health objectives.</p>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <div class="card">
+      <h3>Wearable Device Integration</h3>
+      <div class="image-grid">
+        <% ["Pays (1).png", "Pays (2).png", "Pays (3).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/onboarding/#{img}") %>" alt="Whoop Integration" class="nouri-image">
+          </div>
+        <% end %>
+      </div>
+      <p>Seamless integration with Whoop and Oura wearable devices to transform your biometric data into personalized nutrition recommendations. The setup process guides users through device selection, authentication, and data permissions to enable real-time health monitoring and nutrition optimization.</p>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <div class="card">
+      <h3>Flexible Investment Options</h3>
+      <div class="image-grid">
+        <% ["Tarif.png", "Tarif (1).png", "Tarif (2).png", "Tarif (3).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/onboarding/#{img}") %>" alt="Investment Plans" class="nouri-image nouri-image-scrollable">
+          </div>
+        <% end %>
+      </div>
+      <p>Transparent, flexible investment options designed to match every user's commitment level. From essential nutrition guidance to premium analytics and advanced wearable integration, find the perfect plan for your health journey.</p>
+    </div>
+
+    <div class="card">
+      <h3>Smart Notifications</h3>
+      <div class="image-grid">
+        <div class="image-wrapper">
+          <img src="<%= asset_path('project/nouri/onboarding/Notifications.png') %>" alt="Smart Notifications" class="nouri-image nouri-image-scrollable">
+        </div>
+      </div>
+      <p>Intelligent notification system that learns your schedule and preferences to deliver nutrition insights exactly when you need them, without overwhelming your daily routine.</p>
+    </div>
+  </div>
+
+  <!-- Core App Experience - Using ALL Home Folder Assets -->
+  <h3 class="section-title">Daily Nutrition Intelligence</h3>
+
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Seamless Instacart Integration & Smart Ordering</h3>
+      <div class="image-grid dashboard-grid">
+        <% ["Foyer.png", "Jours.png", "Recipes.png", "Recipes (1).png", "Pays (5).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/home/#{img}") %>" alt="Instacart Integration" class="nouri-image nouri-image-scrollable">
+          </div>
+        <% end %>
+        <% (16..18).each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/home/Delete Recipe Ingredient_Popup (#{i}).png") %>" alt="Instacart Integration #{i}" class="nouri-image">
+          </div>
+        <% end %>
+      </div>
+      <p>Revolutionary partnership with Instacart that transforms your personalized nutrition recommendations into seamless grocery delivery. The intelligent ordering system learns your shopping patterns, automatically generates optimized ingredient lists, and streamlines the ordering process directly through the app. From recipe selection to doorstep delivery, every step is synchronized with your biometric data and dietary preferences for the ultimate convenience in personalized nutrition.</p>
+    </div>
+  </div>
+
+  <!-- Complete Food Intelligence System - ALL Assets Used -->
+  <h3 class="section-title">Advanced Food Intelligence</h3>
+
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Comprehensive Nutritional Database</h3>
+      <div class="image-grid food-database-grid">
+        <div class="image-wrapper">
+          <img src="<%= asset_path("project/nouri/home/Infos par aliment (2).png") %>" alt="Food Database" class="nouri-image nouri-image-large">
+        </div>
+      </div>
+      <p>Revolutionary food intelligence system providing deep nutritional insights for thousands of ingredients. Explore macronutrients, micronutrients, vitamins, and minerals while understanding how each food specifically impacts your biometric data and health goals.</p>
+    </div>
+  </div>
+
+  <!-- Interactive Food Management - All Available Assets Organized by Groups -->
+  <div class="card-section">
+    <div class="card">
+      <h3>Personalized Daily Optimization</h3>
+      <div class="image-grid">
+        <% ["Delete Recipe Ingredient_Popup.png", "Delete Recipe Ingredient_Popup (1).png", "Delete Recipe Ingredient_Popup (2).png", "Delete Recipe Ingredient_Popup (3).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/home/#{img}") %>" alt="Daily Optimization Interface" class="nouri-image">
+          </div>
+        <% end %>
+      </div>
+      <p>Intelligent daily optimization system that analyzes your Whoop or Oura device metrics to provide personalized advice for boosting energy, improving recovery, and optimizing performance. The platform delivers actionable recommendations based on your sleep quality, stress levels, and biometric data to help you maximize each day.</p>
+    </div>
+
+  </div>
+
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Advanced Nutrition Analytics & Progress Tracking</h3>
+      <div class="image-grid">
+        <% [10, 11, 12, 14].each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/home/Delete Recipe Ingredient_Popup (#{i}).png") %>" alt="Nutrition Analytics #{i}" class="nouri-image">
+          </div>
+        <% end %>
+      </div>
+      <p>Comprehensive nutrition analytics and progress tracking system that provides deep insights into your health optimization journey. Features detailed sleep analysis, balanced whole-food metrics, vitamin and mineral tracking, and personalized progress monitoring. The platform transforms complex nutritional data into actionable insights, helping you understand how your dietary choices impact your overall well-being and biometric performance.</p>
+    </div>
+  </div>
+
+  <!-- Advanced Features - Including Missing Assets -->
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Advanced Food Search & Discovery</h3>
+      <div class="image-grid advanced-analytics-grid">
+        <% ["Delete Recipe Ingredient_Popup (22).png", "Home.png", "Delete Recipe Ingredient_Popup (35).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/home/#{img}") %>" alt="Food Search Interface" class="nouri-image nouri-image-large">
+          </div>
+        <% end %>
+      </div>
+      <p>Comprehensive food search and discovery system featuring intelligent categorization, detailed nutritional profiles, and interactive food exploration. Users can easily browse food groups, search for specific ingredients, and access detailed nutritional information for thousands of food items. The intuitive interface allows for seamless navigation through food categories, with instant access to ingredient details and nutritional data to support informed dietary decisions.</p>
+    </div>
+  </div>
+
+  <!-- Recipe Excellence -->
+  <h3 class="section-title">Recipe Intelligence</h3>
+
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Premium Recipe Experience</h3>
+      <div class="image-grid recipe-premium-grid">
+        <% ["Recipe.png", "Delete Recipe Ingredient_Popup (19).png", "Delete Recipe Ingredient_Popup (20).png", "Delete Recipe Ingredient_Popup (21).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/recipes/#{img}") %>" alt="Premium Recipe Experience" class="nouri-image nouri-image-large">
+          </div>
+        <% end %>
+      </div>
+      <p>Premium recipe experience featuring scientifically-optimized meal plans with complete nutritional breakdowns and personalized preparation guidance. Each recipe is precisely calibrated to your current health metrics and long-term wellness objectives.</p>
+    </div>
+  </div>
+
+  <!-- Health Analytics & Optimization -->
+  <h3 class="section-title">Health Performance Analytics</h3>
+
+  <div class="card-section">
+    <div class="card">
+      <h3>Biometric Integration Dashboard</h3>
+      <div class="image-grid">
+        <% [23, 26, 27].each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/progress/Delete Recipe Ingredient_Popup (#{i}).png") %>" alt="Biometric Analytics #{i}" class="nouri-image">
+          </div>
+        <% end %>
+      </div>
+      <p>Advanced biometric integration dashboard that transforms Whoop and Oura data into actionable nutrition insights. Track the direct impact of your nutrition choices on sleep quality, stress management, recovery metrics, and cognitive performance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Hormonal Health Optimization</h3>
+      <div class="image-grid">
+        <% (32..34).each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/hormonal_health/Delete Recipe Ingredient_Popup (#{i}).png") %>" alt="Hormonal Health #{i}" class="nouri-image">
+          </div>
+        <% end %>
+      </div>
+      <p>Specialized hormonal health optimization featuring targeted nutrition strategies for endocrine system support. Data-driven insights reveal the powerful connection between strategic nutrition and hormonal balance.</p>
+    </div>
+  </div>
+
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Adaptive Personalization Engine</h3>
+      <div class="image-grid">
+        <% (28..30).each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/profile/Delete Recipe Ingredient_Popup (#{i}).png") %>" alt="Profile Optimization #{i}" class="nouri-image">
+          </div>
+        <% end %>
+        <% ["Swipe Tastes (1).png", "Restrictions (3).png"].each do |img| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/profile/#{img}") %>" alt="Personalization Engine" class="nouri-image nouri-image-scrollable">
+          </div>
+        <% end %>
+      </div>
+      <p>Comprehensive personalization system that manages user profiles, privacy settings, and taste preferences to deliver tailored nutrition recommendations. The platform allows users to fine-tune their dietary preferences, manage personal information securely, and customize their nutrition experience based on individual goals and restrictions.</p>
+    </div>
+  </div>
+
+  <!-- Digital Presence & Marketing -->
+  <h3 class="section-title">Digital Ecosystem</h3>
+
+  <div class="card-section">
+    <div class="card card-full-width">
+      <h3>Nouri Landing Page & Digital Presence</h3>
+      <div class="image-grid">
+        <% (1..10).each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/nouri/website/#{i}.png") %>" alt="Nouri Landing Page Section #{i}" class="nouri-image nouri-image-large">
+          </div>
+        <% end %>
+      </div>
+      <p>Comprehensive digital ecosystem showcasing Nouri's revolutionary approach to personalized nutrition through precision wearable integration. The landing page demonstrates cutting-edge technology integration, presents scientific validation of the nutrition optimization approach, and features compelling transformation stories from users achieving breakthrough health outcomes through strategic brand positioning and marketing intelligence.</p>
+    </div>
+  </div>
+
+  <div class="navigation-buttons">
+    <a href="#exad-details" class="nav-button left-button">← Check EXAD Project</a>
+    <a href="#ripped-utopia-details" class="nav-button right-button">Check Ripped Utopia Project →</a>
+  </div>
+</div> 

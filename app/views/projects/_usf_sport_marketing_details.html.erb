@@ -119,6 +119,22 @@
     </div>
   </div>
 
+  <h3 class="section-title">Website</h3>
+
+  <div class="card-section">
+    <div class="card">
+      <h4>Association Website</h4>
+      <div class="image-grid">
+        <% (1..4).each do |i| %>
+          <div class="image-wrapper">
+            <img src="<%= asset_path("project/sma/sma#{i}.png") %>" alt="USF Sport Marketing Website" class="sma-image">
+          </div>
+        <% end %>
+      </div>
+      <p>The USF Sport Marketing Association website serves as the digital hub for the organization, featuring comprehensive information about the team, upcoming events, member benefits, and ways to get involved. The website showcases the association's mission to explore the sport marketing industry while providing a platform for networking and professional development opportunities.</p>
+    </div>
+  </div>
+
   <div class="navigation-buttons">
     <a href="#ripped-utopia-details" class="nav-button left-button">← Check Ripped Utopia Project</a>
     <a href="#easyfind-details" class="nav-button right-button">Check EasyFind Project →</a>

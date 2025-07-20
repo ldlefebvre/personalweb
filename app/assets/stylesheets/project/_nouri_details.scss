@@ -1,0 +1,336 @@
+#nouri-details {
+  width: 98%; /* Full screen width */
+  background-color: #00fad079; /* Updated lighter green background */
+  padding: 30px;
+  margin: 100px auto;
+  border-radius: 15px;
+  border: 2px solid #30968579;
+  box-shadow: 0 0 20px rgba(0, 150, 150, 0.5); /* Pronounced shadow */
+  color: #003232;
+  font-family: 'Oxygen', sans-serif;
+
+  @media (max-width: 1400px) {
+    width: 95%;
+    padding: 25px;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 20px;
+    margin: 80px auto;
+  }
+
+  @media (max-width: 992px) {
+    padding: 18px;
+    margin: 60px auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    margin: 20px auto;
+    width: 98%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+    margin: 15px auto;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;
+    color: #c3fff5; /* More prominent color */
+    font-weight: bold;
+
+    @media (max-width: 1200px) {
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 992px) {
+      font-size: 2.6rem;
+      margin-bottom: 35px;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      margin-top: 25px;
+    }
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    margin: 50px 0 30px 0;
+    text-align: center;
+    color: #c3fff5; /* More prominent color */
+    font-weight: bold;
+    border-top: 2px solid #30968579;
+    padding-top: 40px;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      margin: 30px 0 20px 0;
+      padding-top: 30px;
+    }
+  }
+
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    @media (max-width: 1200px) {
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+
+    @media (max-width: 992px) {
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 480px) {
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      flex: 1 1 calc(50% - 40px); /* Two cards per row */
+      background-color: #66b2a8; /* Green-blue background */
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      @media (max-width: 768px) {
+        flex: 1 1 100%;
+      }
+
+      &.card-full-width {
+        flex: 1 1 100%; /* Full width card */
+        max-width: 100%;
+        
+      }
+      
+
+
+      h3, h4 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #00382f; /* Green color */
+        margin: 40px 20px;
+
+        @media (max-width: 1200px) {
+          font-size: 2.3rem;
+          margin: 35px 18px;
+        }
+
+        @media (max-width: 992px) {
+          font-size: 2.1rem;
+          margin: 30px 15px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+          margin: 20px 10px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.6rem;
+          margin: 18px 8px;
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: #003028; /* Green color */
+        margin: 40px 20px;
+
+        @media (max-width: 1200px) {
+          font-size: 1.7rem;
+          margin: 35px 18px;
+        }
+
+        @media (max-width: 992px) {
+          font-size: 1.6rem;
+          margin: 30px 15px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+          margin: 25px 12px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1.3rem;
+          margin: 20px 10px;
+        }
+        line-height: 1.4;
+
+        @media (max-width: 768px) {
+          font-size: 1.4rem;
+          margin: 20px 10px;
+        }
+      }
+
+      .image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-bottom: 15px;
+        align-items: flex-start; /* Align images to top instead of stretching */
+
+        // Simplified grid layouts - match EXAD approach
+        &.food-preference-grid {
+          gap: 10px;
+          align-items: flex-start;
+        }
+
+        &.dashboard-grid {
+          gap: 10px;
+          align-items: flex-start;
+        }
+
+        &.food-database-grid {
+          gap: 10px;
+          align-items: flex-start;
+        }
+
+        &.advanced-analytics-grid {
+          gap: 10px;
+          align-items: flex-start;
+        }
+
+        &.recipe-premium-grid {
+          gap: 10px;
+          align-items: flex-start;
+        }
+
+
+
+        .image-wrapper {
+          flex: 1 1 auto; /* Ensure images take an equal space */
+          max-width: 200px;
+          min-height: 0; /* Allow flexible height */
+          position: relative;
+          border-radius: 12px; /* Changed from 8% to pixels for symmetric rounding */
+
+          @media (max-width: 768px) {
+            max-width: 150px;
+            border-radius: 10px; /* Slightly smaller radius for mobile */
+          }
+
+
+
+          .nouri-image {
+            width: 100%;
+            height: auto; /* Let images maintain natural aspect ratio */
+            object-fit: cover;
+            border-radius: 12px; /* Match wrapper radius for consistent rounding */
+            box-shadow: 0 0 15px rgba(0, 50, 50, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+              transform: scale(1.05);
+              box-shadow: 0 0 25px rgba(0, 100, 100, 0.7);
+            }
+
+
+
+            // Mobile responsive border-radius
+            @media (max-width: 768px) {
+              border-radius: 10px; /* Match wrapper radius on mobile */
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .navigation-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .nav-button {
+      padding: 15px 30px;
+      background-color: #003028;
+      color: rgb(0, 255, 157);
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 15px;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: rgb(0, 205, 137);
+        background-color: #002922;
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(0, 99, 69, 0.568);
+      }
+
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+      }
+    }
+
+    .left-button {
+      justify-self: end;
+      margin-right: 15px;
+    }
+
+    .right-button {
+      justify-self: start;
+      margin-left: 15px;
+    }
+  }
+
+
+
+  /* Improved responsive behavior for mixed content */
+  @media (max-width: 1200px) {
+    .card-section .card {
+      .image-grid {
+        gap: 8px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card-section .card {
+      .image-grid {
+        gap: 6px;
+      }
+    }
+  }
+
+
+} 
