@@ -1,19 +1,22 @@
-// Sensium brand palette
-$sensium-garnet: #6D2435;
-$sensium-garnet-dark: #491A27;
-$sensium-cream: #FCF7F1;
-$sensium-cream-muted: #F1E5D8;
-$sensium-stone: #F7F2EC;
-$sensium-charcoal: #221B17;
-$sensium-gray: #5A5047;
-$sensium-border: #D2C3B3;
+// Sensium section follows the portfolio's blue-green (teal) theme for all chrome
+// — pills, badges, buttons, cards, table, tech tags, borders, shadows, etc.
+// Sensium's own garnet/red identity is intentionally left ONLY in the
+// screenshots, which show the real app colors.
+$sensium-teal: #007E73;          // primary accent (was garnet)
+$sensium-teal-dark: #00453F;     // deep accent for hovers / gradients
+$sensium-cream: #ECFBF7;         // light "on-accent" text + light surface
+$sensium-cream-muted: #D6F0EA;   // muted light surface
+$sensium-stone: #E9F8F4;         // section background
+$sensium-charcoal: #003830;      // primary dark text
+$sensium-gray: #2F5C54;          // muted text
+$sensium-border: #A6D9CF;        // borders
 
 /* ---- Featured box on the projects grid ---- */
 .project-container {
   .sensium-box {
     max-width: 98%;
-    border: 1px solid $sensium-garnet;
-    box-shadow: 0 0 18px rgba(109, 36, 53, 0.55);
+    border: 1px solid #00ffbb;
+    box-shadow: 0 0 22px rgba(0, 255, 200, 0.45);
 
     .platform-badges {
       display: flex;
@@ -30,9 +33,9 @@ $sensium-border: #D2C3B3;
         padding: 5px 12px;
         font-size: 1rem;
         font-weight: bold;
-        color: $sensium-cream;
-        background-color: $sensium-garnet;
-        border: 1px solid rgba(252, 247, 241, 0.3);
+        color: rgba(0, 255, 210, 0.95);
+        background-color: rgba(0, 255, 210, 0.12);
+        border: 1px solid rgba(0, 255, 210, 0.45);
         border-radius: 999px;
 
         i {
@@ -48,19 +51,19 @@ $sensium-border: #D2C3B3;
 
     // "Coming soon" pseudo-buttons (not links)
     .project-link.project-link-soon {
-      background-color: rgba(252, 247, 241, 0.18);
-      color: rgba(252, 247, 241, 0.85);
-      border: 1px dashed rgba(252, 247, 241, 0.55);
+      background-color: rgba(0, 255, 210, 0.10);
+      color: rgba(0, 255, 210, 0.78);
+      border: 1px dashed rgba(0, 255, 210, 0.45);
       cursor: default;
 
       &:hover {
-        background-color: rgba(252, 247, 241, 0.18);
+        background-color: rgba(0, 255, 210, 0.10);
       }
     }
   }
 }
 
-/* ---- Sensium details section (garnet / cream brand) ---- */
+/* ---- Sensium details section (portfolio teal / green theme) ---- */
 #sensium-details {
   width: 98%;
   background: linear-gradient(160deg, $sensium-stone 0%, $sensium-cream-muted 100%);
@@ -68,7 +71,7 @@ $sensium-border: #D2C3B3;
   margin: 100px auto;
   border-radius: 15px;
   border: 2px solid $sensium-border;
-  box-shadow: 0 0 24px rgba(109, 36, 53, 0.35);
+  box-shadow: 0 0 24px rgba(0, 150, 150, 0.35);
   color: $sensium-charcoal;
   font-family: 'Oxygen', sans-serif;
 
@@ -104,7 +107,7 @@ $sensium-border: #D2C3B3;
     margin-bottom: 50px;
     margin-top: 50px;
     text-align: center;
-    color: $sensium-garnet;
+    color: $sensium-teal;
     font-weight: bold;
 
     @media (max-width: 1200px) { font-size: 2.8rem; margin: 40px 0; }
@@ -117,7 +120,7 @@ $sensium-border: #D2C3B3;
     font-size: 2.5rem;
     margin: 50px 0 30px 0;
     text-align: center;
-    color: $sensium-garnet;
+    color: $sensium-teal;
     font-weight: bold;
     border-top: 2px solid $sensium-border;
     padding-top: 40px;
@@ -147,7 +150,7 @@ $sensium-border: #D2C3B3;
       border-radius: 15px;
       border: 1px solid $sensium-border;
       padding: 20px;
-      box-shadow: 0 6px 18px rgba(73, 26, 39, 0.12);
+      box-shadow: 0 6px 18px rgba(0, 70, 65, 0.12);
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -162,17 +165,17 @@ $sensium-border: #D2C3B3;
       }
 
       &.sensium-hero {
-        background: linear-gradient(155deg, $sensium-garnet 0%, $sensium-garnet-dark 100%);
-        border-color: $sensium-garnet-dark;
+        background: linear-gradient(155deg, $sensium-teal 0%, $sensium-teal-dark 100%);
+        border-color: $sensium-teal-dark;
 
         h3 { color: $sensium-cream; }
-        p { color: rgba(252, 247, 241, 0.92); }
+        p { color: rgba(236, 251, 247, 0.92); }
       }
 
       h3, h4 {
         font-size: 2.5rem;
         margin: 30px 20px 15px 20px;
-        color: $sensium-garnet;
+        color: $sensium-teal;
         font-weight: bold;
 
         @media (max-width: 1200px) { font-size: 2.3rem; margin: 28px 18px 14px; }
@@ -188,7 +191,7 @@ $sensium-border: #D2C3B3;
         line-height: 1.5;
 
         a {
-          color: $sensium-garnet;
+          color: $sensium-teal;
           font-weight: bold;
           text-decoration: underline;
         }
@@ -222,12 +225,12 @@ $sensium-border: #D2C3B3;
             object-fit: cover;
             border-radius: 12px;
             border: 1px solid $sensium-border;
-            box-shadow: 0 6px 16px rgba(73, 26, 39, 0.22);
+            box-shadow: 0 6px 16px rgba(0, 70, 65, 0.22);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             &:hover {
               transform: scale(1.05);
-              box-shadow: 0 10px 26px rgba(109, 36, 53, 0.4);
+              box-shadow: 0 10px 26px rgba(0, 90, 82, 0.4);
             }
 
             @media (max-width: 768px) { border-radius: 10px; }
@@ -274,7 +277,7 @@ $sensium-border: #D2C3B3;
       font-size: 1.2rem;
       font-weight: bold;
       color: $sensium-cream;
-      background-color: $sensium-garnet;
+      background-color: $sensium-teal;
       border-radius: 999px;
 
       i { font-size: 1.1rem; }
@@ -298,7 +301,7 @@ $sensium-border: #D2C3B3;
     @media (max-width: 768px) { font-size: 1.4rem; }
   }
 
-  .card p strong { color: $sensium-garnet; }
+  .card p strong { color: $sensium-teal; }
   .card.sensium-hero p strong { color: $sensium-cream; }
 
   /* Highlights / stats strip */
@@ -321,12 +324,12 @@ $sensium-border: #D2C3B3;
       background-color: $sensium-cream;
       border: 1px solid $sensium-border;
       border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(73, 26, 39, 0.12);
+      box-shadow: 0 6px 16px rgba(0, 70, 65, 0.12);
 
       .sensium-stat-num {
         font-size: 2.6rem;
         font-weight: bold;
-        color: $sensium-garnet;
+        color: $sensium-teal;
         line-height: 1;
 
         @media (max-width: 768px) { font-size: 2rem; }
@@ -380,16 +383,16 @@ $sensium-border: #D2C3B3;
 
     th {
       color: $sensium-cream;
-      background-color: $sensium-garnet;
+      background-color: $sensium-teal;
       font-weight: bold;
     }
 
-    td:first-child { font-weight: bold; color: $sensium-garnet; }
+    td:first-child { font-weight: bold; color: $sensium-teal; }
     td { color: $sensium-charcoal; }
 
-    tbody tr:nth-child(even) { background-color: rgba(241, 229, 216, 0.55); }
+    tbody tr:nth-child(even) { background-color: rgba(214, 240, 234, 0.55); }
 
-    a { color: $sensium-garnet; font-weight: bold; text-decoration: underline; }
+    a { color: $sensium-teal; font-weight: bold; text-decoration: underline; }
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -410,9 +413,9 @@ $sensium-border: #D2C3B3;
       padding: 7px 14px;
       font-size: 1.1rem;
       font-weight: bold;
-      color: $sensium-garnet;
+      color: $sensium-teal;
       background-color: $sensium-cream;
-      border: 1px solid $sensium-garnet;
+      border: 1px solid $sensium-teal;
       border-radius: 999px;
 
       @media (max-width: 768px) { font-size: 0.85rem; padding: 5px 10px; }
@@ -428,7 +431,7 @@ $sensium-border: #D2C3B3;
 
     .nav-button {
       padding: 15px 30px;
-      background-color: $sensium-garnet;
+      background-color: $sensium-teal;
       color: $sensium-cream;
       font-size: 1.6rem;
       font-weight: bold;
@@ -437,9 +440,9 @@ $sensium-border: #D2C3B3;
       transition: all 0.3s ease;
 
       &:hover {
-        background-color: $sensium-garnet-dark;
+        background-color: $sensium-teal-dark;
         transform: scale(1.05);
-        box-shadow: 0 0 25px rgba(109, 36, 53, 0.5);
+        box-shadow: 0 0 25px rgba(0, 90, 82, 0.5);
       }
 
       @media (max-width: 768px) {
