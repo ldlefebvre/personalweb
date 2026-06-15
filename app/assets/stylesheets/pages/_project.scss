@@ -240,3 +240,78 @@
     }
   }
 }
+
+/* Click-to-zoom lightbox for project screenshots */
+.project-details-section img.zoomable {
+  cursor: zoom-in;
+}
+
+.project-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 24px;
+  background: rgba(0, 18, 16, 0.93);
+  backdrop-filter: blur(4px);
+  cursor: zoom-out;
+  animation: project-lightbox-fade 0.2s ease;
+
+  &.open {
+    display: flex;
+  }
+
+  .project-lightbox-img {
+    max-width: 92vw;
+    max-height: 82vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    cursor: default;
+    object-fit: contain;
+  }
+
+  .project-lightbox-caption {
+    margin: 0;
+    max-width: 80vw;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .project-lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 26px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2.2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+  }
+}
+
+@keyframes project-lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

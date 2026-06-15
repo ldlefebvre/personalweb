@@ -1,4 +1,28 @@
 <div class="project-container" data-controller="project">
+  <div class="project-box sensium-box">
+    <h2>Sensium</h2>
+    <img src="<%= asset_path('project/sensium_logo.png') %>" alt="Sensium Logo" class="project-logo">
+    <p>Sensium: Blind-Tasting Coach is my newest project — a premium wine-study app for sommelier-track students, exam candidates, and serious enthusiasts.<br><br> A single Kotlin Multiplatform core powers a true cross-platform suite: iPhone, iPad, Mac, Apple Watch, Apple Vision Pro, Android phone & tablet, Wear OS, Chromebook, and a live web app. Train your palate with daily drills, browse scan-first dossiers across a 1,534-variety atlas, compare confusing pairs, and reason through blind tastings to a ranked call — fully offline-first.</p>
+    <div class="platform-badges">
+      <span class="platform-badge"><i class="fa-brands fa-apple"></i> iPhone</span>
+      <span class="platform-badge"><i class="fa-solid fa-tablet-screen-button"></i> iPad</span>
+      <span class="platform-badge"><i class="fa-solid fa-desktop"></i> Mac</span>
+      <span class="platform-badge"><i class="fa-solid fa-clock"></i> Apple Watch</span>
+      <span class="platform-badge"><i class="fa-solid fa-vr-cardboard"></i> Vision Pro</span>
+      <span class="platform-badge"><i class="fa-brands fa-android"></i> Android</span>
+      <span class="platform-badge"><i class="fa-brands fa-android"></i> Android Tablet</span>
+      <span class="platform-badge"><i class="fa-solid fa-clock"></i> Wear OS</span>
+      <span class="platform-badge"><i class="fa-brands fa-chrome"></i> Chromebook</span>
+      <span class="platform-badge"><i class="fa-solid fa-globe"></i> Web</span>
+    </div>
+    <div class="button-container">
+      <a href="https://sensium.wine" class="project-link" target="_blank">View Web App</a>
+      <span class="project-link project-link-soon">App Store — Coming Soon</span>
+      <span class="project-link project-link-soon">Google Play — Coming Soon</span>
+      <a href="#sensium-details" class="project-details-link">View Project Details</a>
+    </div>
+  </div>
+
   <div class="project-box exad-box">
     <h2>EXAD</h2>
     <img src="<%= asset_path('project/exad_logo.png') %>" alt="EXAD Logo" class="project-logo">
@@ -66,6 +90,7 @@
 
   <div class="details-delimiter"></div>
 
+  <%= render 'projects/sensium_details' %>
   <%= render 'projects/exad_details' %>
   <%= render 'projects/nouri_details' %>
   <%= render 'projects/ripped_utopia_details' %>
