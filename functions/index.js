@@ -78,11 +78,23 @@ function escapeHtml(str) {
     .replace(/"/g, "&quot;");
 }
 
+// Restrict browser CORS to our own origins. The form is normally same-origin
+// (hosting rewrite /api/contact), so this mainly stops other sites from POSTing
+// to the function's run.app URL from a browser. Turnstile + honeypot remain the
+// primary bot defenses.
+const ALLOWED_ORIGINS = [
+  "https://www.laurentlefebvre.me",
+  "https://laurentlefebvre.me",
+  "https://laurentlefebvre-portfolio.web.app",
+  "https://laurentlefebvre-portfolio.firebaseapp.com",
+  /^http:\/\/localhost:\d+$/,
+];
+
 exports.sendContactEmail = onRequest(
   {
     region: "us-central1",
     secrets: [RESEND_API_KEY, TURNSTILE_SECRET_KEY],
-    cors: true,
+    cors: ALLOWED_ORIGINS,
     maxInstances: 5,
   },
   async (req, res) => {
