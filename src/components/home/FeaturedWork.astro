@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+import Section from "@/components/ui/Section.astro";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import ProjectCard from "@/components/work/ProjectCard.astro";
+import Button from "@/components/ui/Button.astro";
+import Icon from "@/components/ui/Icon.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((p) => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const lead = projects.find((p) => p.data.tier === "lead");
+const rest = projects.filter((p) => p.data.tier !== "lead");
+---
+
+<Section id="work">
+  <div class="flex flex-wrap items-end justify-between gap-4">
+    <SectionHeading eyebrow="Selected work" title="Products I've shipped" id="work-heading" />
+    <a
+      href="/work"
+      class="inline-flex items-center gap-1.5 text-sm text-text-muted transition-colors hover:text-primary"
+    >
+      All projects <Icon name="arrow-right" size={16} />
+    </a>
+  </div>
+
+  <div class="mt-10 grid gap-6">
+    {lead && <div class="reveal"><ProjectCard project={lead} featured /></div>}
+    <div class="grid gap-6 sm:grid-cols-2">
+      {
+        rest.map((project, i) => (
+          <div class="reveal" data-reveal-delay={(i + 1) * 80}>
+            <ProjectCard project={project} />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="reveal mt-10 flex justify-center">
+    <Button href="/work" variant="secondary" size="lg">
+      Explore all six projects <Icon name="arrow-right" size={18} />
+    </Button>
+  </div>
+</Section>

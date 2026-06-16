@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import me from "@/assets/images/me.jpg";
+import { site } from "@/data/site";
+import Button from "@/components/ui/Button.astro";
+import Icon from "@/components/ui/Icon.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import HeroBackground from "@/components/home/HeroBackground.astro";
+---
+
+<section class="relative overflow-hidden" aria-labelledby="hero-title">
+  <HeroBackground />
+
+  <div
+    class="container-page relative grid items-center gap-12 py-16 lg:min-h-[calc(100svh-var(--header-h))] lg:grid-cols-[1.1fr_0.9fr] lg:py-12"
+  >
+    <div>
+      <p
+        class="animate-fade-up inline-flex items-center gap-2.5 rounded-full border border-border bg-surface/50 px-4 py-1.5 text-sm text-text-muted"
+        style="animation-delay:60ms"
+      >
+        <span class="relative flex size-2">
+          <span class="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-60"></span>
+          <span class="relative inline-flex size-2 rounded-full bg-primary"></span>
+        </span>
+        {site.availability}
+      </p>
+
+      <h1 id="hero-title" class="animate-fade-up mt-6 text-display" style="animation-delay:140ms">
+        Laurent<br />Lefebvre
+      </h1>
+
+      <p
+        class="animate-fade-up mt-5 font-display text-h3 font-semibold"
+        style="animation-delay:220ms"
+      >
+        <span class="text-gradient">{site.role}</span>
+      </p>
+
+      <p
+        class="animate-fade-up mt-6 max-w-xl text-lead text-text-muted"
+        style="animation-delay:300ms"
+      >
+        {site.tagline}
+      </p>
+
+      <div
+        class="animate-fade-up mt-9 flex flex-wrap items-center gap-4"
+        style="animation-delay:380ms"
+      >
+        <Button href="/work" size="lg">
+          View my work <Icon name="arrow-right" size={18} />
+        </Button>
+        <Button href="/#contact" variant="secondary" size="lg">Get in touch</Button>
+      </div>
+
+      <div class="animate-fade-up mt-8" style="animation-delay:460ms">
+        <SocialLinks />
+      </div>
+    </div>
+
+    <div class="animate-fade-up relative mx-auto w-full max-w-sm" style="animation-delay:260ms">
+      <div class="absolute -inset-5 rounded-[2.25rem] bg-primary/15 blur-3xl"></div>
+      <div class="relative animate-float">
+        <Image
+          src={me}
+          alt="Portrait of Laurent Lefebvre"
+          widths={[320, 440, 640]}
+          sizes="(max-width: 1024px) 70vw, 30vw"
+          class="w-full rounded-[1.75rem] border border-border-strong object-cover shadow-glow"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div
+          class="absolute -bottom-5 -left-5 hidden items-center gap-2 rounded-2xl border border-border bg-bg/90 px-4 py-3 shadow-card backdrop-blur sm:flex"
+        >
+          <span class="font-mono text-2xl font-semibold text-primary">10+</span>
+          <span class="text-xs leading-tight text-text-muted">platforms<br />shipped on</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a
+    href="/#work"
+    class="container-page mb-10 hidden items-center gap-2 font-mono text-xs uppercase tracking-widest text-text-subtle transition-colors hover:text-primary lg:flex"
+    aria-label="Scroll to featured work"
+  >
+    <span class="inline-block h-8 w-px bg-border"></span> Scroll
+  </a>
+</section>

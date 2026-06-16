@@ -1,0 +1,20 @@
+---
+/*
+  Ambient hero background — pure CSS, zero JavaScript. Two soft, slowly-drifting
+  gradient orbs. Decorative (aria-hidden); the drift is disabled under
+  prefers-reduced-motion via the global .animate-float guard.
+*/
+---
+
+<div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+  <div
+    class="animate-float absolute -right-24 -top-28 size-[34rem] rounded-full blur-[90px]"
+    style="background: radial-gradient(circle, rgba(46,230,166,0.20), transparent 65%); animation-duration: 9s;"
+  >
+  </div>
+  <div
+    class="animate-float absolute -bottom-32 -left-24 size-[30rem] rounded-full blur-[100px]"
+    style="background: radial-gradient(circle, rgba(21,214,148,0.14), transparent 65%); animation-duration: 11s; animation-delay: -3s;"
+  >
+  </div>
+</div>

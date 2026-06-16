@@ -1,6 +1,38 @@
 {
   "name": "personalweb",
+  "type": "module",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Laurent Lefebvre — personal portfolio (Astro + React islands, Firebase).",
   "engines": {
-    "node": "20.9.0"
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "postbuild": "node scripts/clean-dist.mjs",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@fontsource-variable/sora": "^5.2.8",
+    "@tailwindcss/vite": "^4.3.1",
+    "astro": "^5.18.2",
+    "motion": "^12.40.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "puppeteer-core": "^25.1.0"
   }
 }

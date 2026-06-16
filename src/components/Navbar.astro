@@ -1,0 +1,129 @@
+---
+import { navItems } from "@/data/nav";
+import { site } from "@/data/site";
+import Button from "@/components/ui/Button.astro";
+import Icon from "@/components/ui/Icon.astro";
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-bg/75 backdrop-blur-xl">
+  <nav
+    class="container-page flex items-center justify-between"
+    style="height: var(--header-h)"
+    aria-label="Primary"
+  >
+    <a
+      href="/"
+      class="group inline-flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight"
+    >
+      <span class="size-2.5 rounded-full bg-primary shadow-glow-soft transition-transform duration-300 group-hover:scale-125"></span>
+      <span>Laurent <span class="text-text-muted">Lefebvre</span></span>
+    </a>
+
+    <ul class="hidden items-center gap-1 md:flex">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              data-nav-link
+              class="rounded-full px-3.5 py-2 text-sm text-text-muted transition-colors duration-200 hover:text-text aria-[current=page]:text-primary"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="hidden items-center gap-3 md:flex">
+      <Button href="/#contact" variant="primary" size="md">Get in touch</Button>
+    </div>
+
+    <button
+      type="button"
+      id="nav-toggle"
+      class="grid size-11 place-items-center rounded-full border border-border text-text md:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      aria-label="Open menu"
+    >
+      <span data-icon-menu><Icon name="menu" size={22} /></span>
+      <span data-icon-close hidden><Icon name="close" size={22} /></span>
+    </button>
+  </nav>
+
+  <div
+    id="mobile-nav"
+    class="origin-top overflow-hidden border-t border-border bg-bg/95 backdrop-blur-xl md:hidden"
+    hidden
+  >
+    <ul class="container-page flex flex-col gap-1 py-4">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              data-nav-link
+              data-mobile-link
+              class="block rounded-xl px-4 py-3 text-lg text-text-muted transition-colors hover:bg-surface hover:text-text aria-[current=page]:text-primary"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="px-1 pt-2">
+        <Button href="/#contact" variant="primary" size="lg" class="w-full" data-mobile-link>
+          Get in touch
+        </Button>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  function initNavbar() {
+    const toggle = document.getElementById("nav-toggle");
+    const panel = document.getElementById("mobile-nav");
+    if (!toggle || !panel) return;
+
+    const iconMenu = toggle.querySelector<HTMLElement>("[data-icon-menu]");
+    const iconClose = toggle.querySelector<HTMLElement>("[data-icon-close]");
+
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      panel.hidden = !open;
+      if (iconMenu) iconMenu.hidden = open;
+      if (iconClose) iconClose.hidden = !open;
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+
+    panel.querySelectorAll("[data-mobile-link]").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        setOpen(false);
+        (toggle as HTMLElement).focus();
+      }
+    });
+
+    // Mark the active link based on the current path
+    const path = window.location.pathname;
+    document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]").forEach((link) => {
+      const href = link.getAttribute("href") ?? "";
+      const isWork = href === "/work" && path.startsWith("/work");
+      const isExact = href === path;
+      link.toggleAttribute("aria-current", false);
+      if (isWork || isExact) link.setAttribute("aria-current", "page");
+    });
+  }
+
+  document.addEventListener("astro:page-load", initNavbar);
+</script>

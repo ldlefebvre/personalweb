@@ -44,3 +44,28 @@
 /vendor/bundle
 
 /config/master.key
+
+# --- Astro / Node / Firebase (new stack) ---
+node_modules/
+dist/
+.astro/
+.output/
+*.tsbuildinfo
+
+# Build + tooling caches
+.vite/
+.cache/
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+functions/node_modules/
+functions/lib/
+
+# Local env / secrets (never commit)
+.env
+.env.*
+!.env.example
+.dev.vars

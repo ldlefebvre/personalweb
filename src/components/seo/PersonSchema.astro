@@ -1,0 +1,35 @@
+---
+import { site } from "@/data/site";
+
+const json = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  jobTitle: site.role,
+  url: site.url,
+  email: `mailto:${site.email}`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Montréal",
+    addressRegion: "QC",
+    addressCountry: "CA",
+  },
+  sameAs: [
+    site.socials.github.url,
+    site.socials.linkedin.url,
+    site.socials.instagram.url,
+  ],
+  knowsAbout: [
+    "iOS Development",
+    "Swift",
+    "SwiftUI",
+    "Kotlin Multiplatform",
+    "Jetpack Compose",
+    "Software Engineering",
+    "Mobile Development",
+    "Full-Stack Development",
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(json)} is:inline />

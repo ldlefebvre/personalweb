@@ -1,0 +1,61 @@
+---
+import Section from "@/components/ui/Section.astro";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import Icon from "@/components/ui/Icon.astro";
+import SocialLinks from "@/components/SocialLinks.astro";
+import ContactForm from "@/components/contact/ContactForm.tsx";
+import { site } from "@/data/site";
+
+const methods = [
+  { icon: "mail", label: site.email, href: `mailto:${site.email}` },
+  { icon: "location", label: site.location, href: undefined },
+] as const;
+---
+
+<Section id="contact" class="border-t border-border/50">
+  <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+    <div>
+      <SectionHeading eyebrow="Contact" title="Let's build something" id="contact-heading" />
+      <p class="mt-5 text-lead text-text-muted">
+        {site.availability}. Have a role, a project, or just want to talk iOS and
+        cross-platform engineering? Send a note.
+      </p>
+
+      <ul class="mt-8 space-y-3">
+        {
+          methods.map((m) => (
+            <li>
+              {m.href ? (
+                <a
+                  href={m.href}
+                  class="inline-flex items-center gap-3 text-text-muted transition-colors hover:text-primary"
+                >
+                  <span class="grid size-10 place-items-center rounded-full border border-border bg-surface/40 text-primary">
+                    <Icon name={m.icon} size={18} />
+                  </span>
+                  {m.label}
+                </a>
+              ) : (
+                <span class="inline-flex items-center gap-3 text-text-muted">
+                  <span class="grid size-10 place-items-center rounded-full border border-border bg-surface/40 text-primary">
+                    <Icon name={m.icon} size={18} />
+                  </span>
+                  {m.label}
+                </span>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="mt-8">
+        <p class="mb-3 font-mono text-xs uppercase tracking-widest text-text-subtle">Elsewhere</p>
+        <SocialLinks />
+      </div>
+    </div>
+
+    <div class="reveal">
+      <ContactForm client:visible />
+    </div>
+  </div>
+</Section>

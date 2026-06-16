@@ -1,0 +1,46 @@
+---
+title: Ripped Utopia
+tagline: Powerlifting, tracked.
+role: iOS Engineer
+period: "2023 — 2024"
+order: 4
+featured: false
+tier: secondary
+accent: "#1f6f64"
+summary: >-
+  A fitness and powerlifting app with 1,300+ exercises, personalized workouts,
+  and progress tracking that syncs between online and offline databases.
+impact: Built offline/online data sync for a 1,300+ exercise training app.
+logo: ripped_utopia_logo.png
+platforms:
+  - iPhone
+stack:
+  - Swift
+  - SwiftUI
+  - Core Data
+  - iOS
+metrics:
+  - { value: "1,300+", label: "exercises" }
+  - { value: "Offline", label: "+ online sync" }
+links:
+  - { label: "View on the App Store", url: "https://apps.apple.com/ca/app/ripped-utopia/id6475913371", primary: true }
+gallery:
+  - { src: "ripped-utopia/slide 26/1.png", caption: "Workout library" }
+  - { src: "ripped-utopia/slide 29/1.png", caption: "Personalized workout" }
+  - { src: "ripped-utopia/slide 32/1.png", caption: "Progress tracking" }
+---
+
+Ripped Utopia is a fitness and powerlifting app built around a library of over
+1,300 exercises and personalized workouts.
+
+## The interesting part
+
+The core engineering challenge was data: keeping a large exercise catalog and a
+user's personal progress consistent between a local offline store and an online
+database, so the app stays fully usable in the gym with spotty connectivity and
+reconciles cleanly when it reconnects.
+
+## What I built
+
+Personalized workout generation, progress tracking, and the offline/online sync
+layer — shipped to the App Store as a native iOS app.

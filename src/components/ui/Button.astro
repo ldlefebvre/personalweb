@@ -1,0 +1,45 @@
+---
+interface Props {
+  href?: string;
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "md" | "lg";
+  class?: string;
+  type?: "button" | "submit" | "reset";
+  target?: string;
+  rel?: string;
+  "aria-label"?: string;
+  download?: boolean | string;
+  "data-mobile-link"?: boolean | string;
+}
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  class: className = "",
+  type = "button",
+  ...rest
+} = Astro.props;
+
+const base =
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-tight transition-all duration-200 will-change-transform active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary";
+
+const variants: Record<string, string> = {
+  primary:
+    "bg-primary text-ink shadow-glow-soft hover:bg-primary-strong hover:shadow-glow hover:-translate-y-0.5",
+  secondary:
+    "border border-border-strong bg-surface/50 text-text hover:border-primary hover:text-primary hover:-translate-y-0.5",
+  ghost: "text-text-muted hover:text-primary",
+};
+
+const sizes: Record<string, string> = {
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-7 py-3.5 text-base",
+};
+
+const cls = [base, variants[variant], sizes[size], className].join(" ");
+const Tag = href ? "a" : "button";
+---
+
+<Tag class={cls} href={href} type={href ? undefined : type} {...rest}>
+  <slot />
+</Tag>

@@ -1,0 +1,86 @@
+/*
+  Design tokens — the single source of truth for Laurent Lefebvre's portfolio.
+  Evolved from the original teal + neon-green identity, tuned for WCAG AA.
+  Exposed to Tailwind v4 via @theme so utilities like `bg-surface`,
+  `text-accent`, `text-display`, `shadow-glow` are generated automatically.
+*/
+
+@theme {
+  /* ---- Color: deep teal canvas, mint/neon-green accents ---- */
+  --color-bg: #061a17;
+  --color-bg-2: #04120f;
+  --color-surface: #0b2925;
+  --color-surface-2: #103832;
+  --color-surface-3: #15473f;
+  --color-border: #1b463f;
+  --color-border-strong: #2a6b5f;
+
+  --color-primary: #2ee6a6;
+  --color-primary-strong: #15d694;
+  --color-accent: #6ff4cb;
+  --color-accent-soft: #133f38;
+  --color-ink: #04130f;
+
+  --color-text: #e9f8f2;
+  --color-text-muted: #a4c8bd;
+  --color-text-subtle: #6f968c;
+
+  --color-danger: #ff6b6b;
+  --color-success: #2ee6a6;
+
+  /* ---- Typography ---- */
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Sora Variable", "Inter Variable", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Fluid type scale (clamp) */
+  --text-display: clamp(2.6rem, 1.5rem + 5vw, 5.5rem);
+  --text-display--line-height: 1.0;
+  --text-display--letter-spacing: -0.035em;
+  --text-display--font-weight: 700;
+
+  --text-h1: clamp(2rem, 1.4rem + 3vw, 3.5rem);
+  --text-h1--line-height: 1.06;
+  --text-h1--letter-spacing: -0.025em;
+
+  --text-h2: clamp(1.6rem, 1.2rem + 2vw, 2.5rem);
+  --text-h2--line-height: 1.12;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-h3: clamp(1.25rem, 1.05rem + 1vw, 1.65rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+
+  --text-lead: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  --text-lead--line-height: 1.6;
+
+  /* ---- Radii ---- */
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2.25rem;
+
+  /* ---- Shadows / signature glow ---- */
+  --shadow-card: 0 1px 0 0 rgb(255 255 255 / 0.03) inset, 0 18px 40px -24px rgb(0 0 0 / 0.7);
+  --shadow-glow: 0 0 0 1px rgb(46 230 166 / 0.22), 0 10px 50px -12px rgb(46 230 166 / 0.28);
+  --shadow-glow-soft: 0 8px 40px -16px rgb(46 230 166 / 0.22);
+
+  /* ---- Layout ---- */
+  --container-page: 75rem;
+
+  /* ---- Easing / motion (also mirrored in :root for JS) ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+:root {
+  /* Motion durations available to plain CSS + JS islands */
+  --dur-fast: 150ms;
+  --dur: 280ms;
+  --dur-slow: 520ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Fixed header height, used for scroll-padding + layout offsets */
+  --header-h: 4.5rem;
+}

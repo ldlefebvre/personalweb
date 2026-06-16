@@ -1,0 +1,86 @@
+---
+import { Image, getImage } from "astro:assets";
+import { projectImage } from "@/lib/images";
+import Lightbox from "@/components/work/Lightbox.tsx";
+
+interface GalleryEntry {
+  src: string;
+  caption?: string;
+  wide?: boolean;
+}
+interface Props {
+  items: GalleryEntry[];
+  accent?: string;
+}
+const { items, accent = "#2ee6a6" } = Astro.props;
+
+const resolved = await Promise.all(
+  items.map(async (item) => {
+    const meta = await projectImage(item.src);
+    const large = await getImage({
+      src: meta,
+      width: Math.min(meta.width, 1600),
+      format: "webp",
+      quality: 80,
+    });
+    return { meta, large: large.src, caption: item.caption, wide: item.wide };
+  }),
+);
+
+const lightboxImages = resolved.map((r) => ({ src: r.large, caption: r.caption }));
+const panelStyle = `background: linear-gradient(180deg, ${accent}1a, transparent 70%);`;
+---
+
+<div class="gallery-grid gap-4 [&>*]:mb-4">
+  {
+    resolved.map((r, i) => (
+      <button
+        type="button"
+        data-lightbox-trigger
+        data-index={i}
+        class="group block w-full break-inside-avoid overflow-hidden rounded-xl border border-border transition-all duration-300 hover:border-border-strong hover:shadow-glow-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        style={panelStyle}
+        aria-label={r.caption ? `View image: ${r.caption}` : `View image ${i + 1}`}
+      >
+        <Image
+          src={r.meta}
+          alt={r.caption ?? ""}
+          widths={[300, 500, 700]}
+          sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 360px"
+          class="w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+          loading="lazy"
+        />
+        {r.caption && (
+          <span class="block px-3 py-2.5 text-left text-xs text-text-muted">{r.caption}</span>
+        )}
+      </button>
+    ))
+  }
+</div>
+
+<Lightbox images={lightboxImages} client:visible />
+
+<style>
+  .gallery-grid {
+    column-count: 2;
+  }
+  @media (min-width: 768px) {
+    .gallery-grid {
+      column-count: 3;
+    }
+  }
+</style>
+
+<script>
+  function initGallery() {
+    document.querySelectorAll<HTMLButtonElement>("[data-lightbox-trigger]").forEach((btn) => {
+      if (btn.dataset.bound === "1") return;
+      btn.dataset.bound = "1";
+      btn.addEventListener("click", () => {
+        const index = Number(btn.getAttribute("data-index") ?? 0);
+        window.dispatchEvent(new CustomEvent("open-lightbox", { detail: { index } }));
+      });
+    });
+  }
+  document.addEventListener("astro:page-load", initGallery);
+</script>

@@ -1,0 +1,25 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+  contained?: boolean;
+  labelledby?: string;
+}
+const { id, class: className = "", contained = true, labelledby } = Astro.props;
+---
+
+<section
+  id={id}
+  aria-labelledby={labelledby}
+  class:list={["py-20 sm:py-28 scroll-mt-24", className]}
+>
+  {
+    contained ? (
+      <div class="container-page">
+        <slot />
+      </div>
+    ) : (
+      <slot />
+    )
+  }
+</section>

@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { projectImage } from "@/lib/images";
+import Tag from "@/components/ui/Tag.astro";
+import Icon from "@/components/ui/Icon.astro";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  featured?: boolean;
+}
+const { project, featured = false } = Astro.props;
+const d = project.data;
+const logo = await projectImage(d.logo);
+const cover = d.cover ? await projectImage(d.cover) : null;
+const href = `/work/${project.id}`;
+const panelStyle = `background:
+  radial-gradient(120% 120% at 50% 0%, ${d.accent}40, transparent 70%),
+  linear-gradient(180deg, ${d.accent}24, transparent 85%);`;
+---
+
+<a
+  href={href}
+  class:list={[
+    "surface-card group relative flex overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-border-strong hover:shadow-glow-soft",
+    featured ? "flex-col lg:flex-row" : "flex-col",
+  ]}
+>
+  <div
+    class:list={[
+      "relative flex overflow-hidden",
+      cover ? "items-end justify-center" : "items-center justify-center p-8",
+      featured ? "min-h-[15rem] lg:min-h-[19rem] lg:w-[42%]" : "min-h-[12.5rem]",
+    ]}
+    style={panelStyle}
+  >
+    {
+      cover ? (
+        <Image
+          src={cover}
+          alt={`${d.title} app preview`}
+          widths={[260, 420, 560]}
+          sizes="(max-width: 1024px) 70vw, 400px"
+          class="w-[58%] max-w-[13.5rem] translate-y-[14%] rounded-[1.4rem] border border-white/15 shadow-2xl transition-transform duration-500 ease-out group-hover:translate-y-[9%]"
+        />
+      ) : (
+        <Image
+          src={logo}
+          alt={`${d.title} logo`}
+          widths={[160, 240]}
+          sizes="200px"
+          class="h-16 w-auto max-w-[70%] object-contain drop-shadow-lg transition-transform duration-300 group-hover:scale-105"
+        />
+      )
+    }
+    {
+      d.tier === "lead" && (
+        <span class="absolute left-4 top-4 rounded-full bg-primary px-3 py-1 font-mono text-[0.65rem] font-semibold uppercase tracking-wider text-ink shadow-glow-soft">
+          Flagship
+        </span>
+      )
+    }
+  </div>
+
+  <div class="flex flex-1 flex-col p-6 sm:p-7">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-h3">{d.title}</h3>
+      <span class="font-mono text-xs text-text-subtle">{d.period}</span>
+    </div>
+    <p class="mt-1 text-sm font-medium text-primary">{d.tagline}</p>
+    <p class="mt-3 text-text-muted">{d.impact}</p>
+
+    {
+      d.platforms.length > 0 && (
+        <div class="mt-4 flex flex-wrap gap-1.5">
+          {d.platforms.slice(0, featured ? 8 : 4).map((p) => (
+            <span class="rounded-md bg-surface-2/70 px-2 py-0.5 text-xs text-text-subtle">{p}</span>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="mt-5 flex flex-wrap gap-1.5">
+      {d.stack.slice(0, featured ? 6 : 4).map((s) => <Tag>{s}</Tag>)}
+    </div>
+
+    <span
+      class="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-text transition-colors group-hover:text-primary"
+    >
+      View case study
+      <Icon name="arrow-right" size={16} class="transition-transform duration-300 group-hover:translate-x-1" />
+    </span>
+  </div>
+</a>

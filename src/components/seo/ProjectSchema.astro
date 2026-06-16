@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { site } from "@/data/site";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+const { project } = Astro.props;
+const d = project.data;
+const url = new URL(`/work/${project.id}`, Astro.site).href;
+
+const json = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: d.title,
+  headline: d.impact,
+  description: d.summary,
+  url,
+  dateCreated: d.period,
+  creator: {
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+  },
+  keywords: [...d.stack, ...d.platforms].join(", "),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(json)} is:inline />

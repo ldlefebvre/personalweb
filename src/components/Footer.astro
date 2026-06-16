@@ -1,0 +1,80 @@
+---
+import { navItems } from "@/data/nav";
+import { site } from "@/data/site";
+import SocialLinks from "@/components/SocialLinks.astro";
+import Icon from "@/components/ui/Icon.astro";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border/70 bg-bg-2/60">
+  <div class="container-page py-14">
+    <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr]">
+      <div>
+        <a href="/" class="inline-flex items-center gap-2.5 font-display text-lg font-semibold">
+          <span class="size-2.5 rounded-full bg-primary"></span>
+          Laurent Lefebvre
+        </a>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-text-muted">
+          {site.role} based in {site.location}. {site.availability}.
+        </p>
+        <SocialLinks class="mt-5" />
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="font-mono text-xs uppercase tracking-widest text-text-subtle">Explore</h2>
+        <ul class="mt-4 space-y-2.5">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-sm text-text-muted transition-colors hover:text-primary"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="font-mono text-xs uppercase tracking-widest text-text-subtle">Get in touch</h2>
+        <ul class="mt-4 space-y-2.5">
+          <li>
+            <a
+              href={`mailto:${site.email}`}
+              class="inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-primary"
+            >
+              <Icon name="mail" size={16} /> {site.email}
+            </a>
+          </li>
+          <li>
+            <a
+              href="/#contact"
+              class="inline-flex items-center gap-2 text-sm text-text-muted transition-colors hover:text-primary"
+            >
+              <Icon name="mail" size={16} /> Send a message
+            </a>
+          </li>
+          <li class="inline-flex items-center gap-2 text-sm text-text-muted">
+            <Icon name="location" size={16} /> {site.location}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-text-subtle sm:flex-row"
+    >
+      <p>© {year} Laurent Lefebvre. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <span>Built with Astro · React · Motion</span>
+        <a href="#top" class="inline-flex items-center gap-1 transition-colors hover:text-primary">
+          Back to top <Icon name="arrow-up-right" size={14} />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,59 @@
+---
+import Section from "@/components/ui/Section.astro";
+import SectionHeading from "@/components/ui/SectionHeading.astro";
+import Tag from "@/components/ui/Tag.astro";
+import { experience } from "@/data/experience";
+---
+
+<Section id="experience" class="border-t border-border/50">
+  <SectionHeading eyebrow="Career" title="Where I've engineered" id="experience-heading" />
+
+  <ol class="mt-12 space-y-3">
+    {
+      experience.map((role, i) => (
+        <li class="reveal" data-reveal-delay={i * 80}>
+          <div class="relative grid gap-5 pl-8 sm:grid-cols-[10rem_1fr] sm:gap-8 sm:pl-0">
+            <span
+              class="absolute bottom-0 left-[5px] top-2 w-px bg-border sm:left-[calc(10rem+0.5px)]"
+              aria-hidden="true"
+            />
+            <span
+              class:list={[
+                "absolute left-0 top-1.5 size-3 rounded-full ring-4 ring-bg sm:left-[calc(10rem-5px)]",
+                role.current ? "bg-primary shadow-glow-soft" : "bg-border-strong",
+              ]}
+              aria-hidden="true"
+            />
+            <div class="sm:pt-0.5 sm:pr-7 sm:text-right">
+              <p class="font-mono text-sm text-text-muted">{role.period}</p>
+              <p class="mt-1 text-xs text-text-subtle">{role.location}</p>
+            </div>
+            <div class="surface-card p-6 sm:p-7">
+              <div class="flex flex-wrap items-baseline justify-between gap-x-3">
+                <h3 class="text-h3">{role.title}</h3>
+                {role.current && (
+                  <span class="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-primary">
+                    Current
+                  </span>
+                )}
+              </div>
+              <p class="mt-0.5 font-display text-lg font-semibold text-primary">{role.company}</p>
+              <p class="mt-3 text-text-muted">{role.summary}</p>
+              <ul class="mt-4 space-y-2">
+                {role.highlights.map((h) => (
+                  <li class="flex gap-2.5 text-sm text-text-muted">
+                    <span class="mt-2 size-1.5 shrink-0 rounded-full bg-primary/70" aria-hidden="true" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-5 flex flex-wrap gap-1.5">
+                {role.tech.map((t) => <Tag>{t}</Tag>)}
+              </div>
+            </div>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Section>
