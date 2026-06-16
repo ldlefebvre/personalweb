@@ -60,4 +60,33 @@ export const experience: Role[] = [
     ],
     tech: ["React", "Docker", "AWS EKS", "Kubernetes", "Jenkins", "NGINX", "CI/CD"],
   },
+  {
+    company: "Nouri Health",
+    title: "CTO & Mobile Engineer",
+    period: "2024 — 2025",
+    location: "Montréal / Remote",
+    summary:
+      "Technical lead for Nouri, a personalized nutrition coach that turns Whoop and Oura wearable data into daily, dietitian-backed food recommendations across iOS and Android.",
+    highlights: [
+      "Led the mobile technical direction and built the cross-platform Flutter app from a single codebase, shipping to both the App Store and Google Play.",
+      "Integrated Whoop and Oura wearable data into a daily-engagement loop delivering 6–8 personalized, dietitian-backed recommendations.",
+      "Shipped end-to-end surfaces — onboarding and wearable setup, the recommendation feed, recipes, smart grocery lists with Instacart, and progress tracking.",
+    ],
+    tech: ["Flutter", "Dart", "TypeScript", "REST APIs"],
+  },
+  {
+    company: "Exad",
+    title: "Founder & iOS Engineer",
+    period: "2021 — 2025",
+    location: "Montréal",
+    summary:
+      "Founded Exad and shipped a native iOS marketplace for adrenaline-fueled adventures and extreme sports to the App Store — owned end to end from product and design through engineering.",
+    highlights: [
+      "Founded and shipped a two-sided iOS marketplace to the App Store, owning product, design, and engineering end to end.",
+      "Built the native Swift/SwiftUI client — discovery and search, booking flow, real-time chat, maps, a custom camera, deep links, and push — on a Firebase backend.",
+      "Integrated Stripe Connect payments through a Node.js layer with automated transactional emails for a live two-sided marketplace.",
+      "Owned App Store review and release management, plus branding with custom SF Symbols and Figma/Photoshop.",
+    ],
+    tech: ["Swift", "SwiftUI", "Firebase", "Node.js", "Stripe"],
+  },
 ];
