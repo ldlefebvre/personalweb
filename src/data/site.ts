@@ -4,15 +4,15 @@
 export const site = {
   name: "Laurent Lefebvre",
   firstName: "Laurent",
-  role: "Software & Mobile (iOS) Engineer",
-  shortRole: "iOS & Full-Stack Engineer",
+  role: "Software & Mobile Engineer",
+  shortRole: "Mobile & Full-Stack Engineer",
   tagline:
-    "I build polished, cross-platform mobile products end to end — from a shared Kotlin Multiplatform core to shipped App Store and Google Play apps.",
+    "iOS specialist with full-stack range — I ship polished, cross-platform mobile apps end to end, from a shared core to the App Store, Google Play, and the web.",
   blurb:
-    "iOS-focused software engineer with full-stack range. I've shipped native apps in production at OpenLane, built enterprise systems at National Bank of Canada, and now lead Sensium — a 10-platform wine-study app powered by a single shared core.",
+    "iOS specialist and full-stack engineer. I've shipped native iOS in production at OpenLane, cross-platform apps with Kotlin Multiplatform and Flutter, and full-stack systems on AWS at National Bank of Canada — and I now lead Sensium, a 10-platform wine-study app on one shared core.",
   email: "laurent.d.lefebvre@gmail.com",
   location: "Montréal, Québec, Canada",
-  availability: "Open to iOS & full-stack engineering roles",
+  availability: "Open to mobile, web & full-stack roles",
   url: "https://www.laurentlefebvre.me",
   socials: {
     github: { label: "GitHub", url: "https://github.com/ldlefebvre", icon: "github" },

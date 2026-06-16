@@ -30,10 +30,10 @@ const secondary = all.filter((p) => p.data.tier === "secondary");
   <Section class="!pt-0">
     <div class="grid gap-6">
       {lead && <div class="reveal"><ProjectCard project={lead} featured /></div>}
-      <div class="grid gap-6 sm:grid-cols-2">
+      <div class="grid items-stretch gap-6 sm:grid-cols-2">
         {
           primary.map((project, i) => (
-            <div class="reveal" data-reveal-delay={(i + 1) * 80}>
+            <div class="reveal h-full" data-reveal-delay={(i + 1) * 80}>
               <ProjectCard project={project} />
             </div>
           ))
@@ -43,10 +43,10 @@ const secondary = all.filter((p) => p.data.tier === "secondary");
 
     <div class="mt-16">
       <SectionHeading eyebrow="Earlier work" title="More projects" />
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-8 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {
           secondary.map((project, i) => (
-            <div class="reveal" data-reveal-delay={i * 80}>
+            <div class="reveal h-full" data-reveal-delay={i * 80}>
               <ProjectCard project={project} />
             </div>
           ))

@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import doggo from "@/assets/images/doggo.jpg";
 import Section from "@/components/ui/Section.astro";
 import SectionHeading from "@/components/ui/SectionHeading.astro";
 
@@ -19,7 +21,19 @@ const interests = [
 ---
 
 <Section id="about" class="border-t border-border/50">
-  <div class="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+  <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+    <div class="reveal relative mx-auto w-full max-w-xs">
+      <div class="absolute -inset-4 rounded-[2rem] bg-primary/15 blur-2xl"></div>
+      <Image
+        src={doggo}
+        alt="Laurent Lefebvre overlooking Montréal, holding his golden retriever"
+        widths={[320, 480, 640]}
+        sizes="(max-width: 1024px) 70vw, 360px"
+        class="relative w-full rounded-[1.5rem] border border-border-strong object-cover shadow-glow"
+        loading="lazy"
+      />
+    </div>
+
     <div class="reveal">
       <SectionHeading eyebrow="Beyond code" title="The why behind the work" id="about-heading" />
       <p class="mt-5 text-lead text-text-muted">
@@ -29,19 +43,20 @@ const interests = [
       </p>
       <p class="mt-4 text-text-muted">
         Outside the editor you'll find me on a ski slope, under a barbell, or
-        nose-deep in a glass trying to call the grape blind.
+        nose-deep in a glass trying to call the grape blind — usually with my
+        golden retriever not far behind.
       </p>
-    </div>
 
-    <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-      {
-        interests.map((it, i) => (
-          <div class="reveal surface-card p-5" data-reveal-delay={i * 80}>
-            <h3 class="font-display font-semibold text-primary">{it.title}</h3>
-            <p class="mt-1.5 text-sm text-text-muted">{it.body}</p>
-          </div>
-        ))
-      }
+      <div class="mt-8 grid gap-4 sm:grid-cols-3">
+        {
+          interests.map((it, i) => (
+            <div class="reveal surface-card p-5" data-reveal-delay={i * 80}>
+              <h3 class="font-display font-semibold text-primary">{it.title}</h3>
+              <p class="mt-1.5 text-sm text-text-muted">{it.body}</p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </Section>
