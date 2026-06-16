@@ -31,7 +31,13 @@ const headerStyle = `background:
   radial-gradient(80% 120% at 50% -10%, ${d.accent}33, transparent 70%);`;
 ---
 
-<BaseLayout title={d.title} description={d.summary} type="article">
+<BaseLayout
+  title={d.title}
+  description={d.summary}
+  type="article"
+  image={`/og/${project.id}.png`}
+  imageAlt={`${d.title} — ${d.tagline}`}
+>
   <ProjectSchema slot="head" project={project} />
   <article>
     <header class="relative overflow-hidden border-b border-border/60" style={headerStyle}>

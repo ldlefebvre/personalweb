@@ -5,6 +5,7 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   type?: "website" | "article" | "profile";
   noindex?: boolean;
 }
@@ -12,25 +13,46 @@ const {
   title,
   description = site.tagline,
   image = "/og/default.png",
+  imageAlt,
   type = "website",
   noindex = false,
 } = Astro.props;
 
 const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — ${site.role}`;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// Normalize to the exact URL Firebase serves (cleanUrls + trailingSlash:false):
+// strip index.html / .html / trailing slash so the canonical never points at a
+// redirecting variant.
+const cleanPath =
+  Astro.url.pathname
+    .replace(/index\.html$/, "")
+    .replace(/\.html$/, "")
+    .replace(/(.)\/$/, "$1") || "/";
+const canonical = new URL(cleanPath, Astro.site).href;
 const ogImage = new URL(image, Astro.site).href;
+const ogImageAlt = imageAlt ?? fullTitle;
 ---
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+{
+  noindex ? (
+    <meta name="robots" content="noindex, nofollow" />
+  ) : (
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+  )
+}
 
 <meta property="og:type" content={type} />
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={ogImage} />
+<meta property="og:image:secure_url" content={ogImage} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAlt} />
 <meta property="og:site_name" content={site.name} />
 <meta property="og:locale" content="en_US" />
 
@@ -38,3 +60,4 @@ const ogImage = new URL(image, Astro.site).href;
 <meta name="twitter:title" content={fullTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={ogImageAlt} />

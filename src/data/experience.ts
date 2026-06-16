@@ -54,9 +54,10 @@ export const experience: Role[] = [
       "Full-stack and DevOps internship building, hardening, and shipping containerized microservices on AWS at one of Canada's largest banks.",
     highlights: [
       "Containerized and deployed a React front-end microservice on AWS EKS using Docker, and maintained Jenkins-driven CI/CD pipelines.",
-      "Hardened applications with Snyk and Checkov scans, managed secrets via Vault, refactored the codebase, and wrote unit tests.",
+      "Contributed to an enterprise-wide cloud migration across multiple banking applications, modernizing deployment from legacy infrastructure to AWS Kubernetes with zero service disruption.",
+      "Hardened applications with Snyk and Checkov scans, managed secrets via Vault, refactored the codebase, and wrote unit tests with Jest and React Testing Library.",
       "Configured NGINX as a reverse-proxy / load-balancer for microservices.",
     ],
-    tech: ["React", "Docker", "AWS EKS", "Jenkins", "NGINX", "CI/CD"],
+    tech: ["React", "Docker", "AWS EKS", "Kubernetes", "Jenkins", "NGINX", "CI/CD"],
   },
 ];

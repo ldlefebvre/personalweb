@@ -8,21 +8,37 @@ interface Props {
 const { project } = Astro.props;
 const d = project.data;
 const url = new URL(`/work/${project.id}`, Astro.site).href;
+const workUrl = new URL("/work", Astro.site).href;
+const ogImage = new URL(`/og/${project.id}.png`, Astro.site).href;
 
 const json = {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: d.title,
-  headline: d.impact,
-  description: d.summary,
-  url,
-  dateCreated: d.period,
-  creator: {
-    "@type": "Person",
-    name: site.name,
-    url: site.url,
-  },
-  keywords: [...d.stack, ...d.platforms].join(", "),
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      name: d.title,
+      headline: d.impact,
+      description: d.summary,
+      url,
+      image: ogImage,
+      dateCreated: d.period,
+      creator: {
+        "@type": "Person",
+        "@id": `${site.url}/#person`,
+        name: site.name,
+        url: site.url,
+      },
+      keywords: [...d.stack, ...d.platforms].join(", "),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+        { "@type": "ListItem", position: 2, name: "Work", item: workUrl },
+        { "@type": "ListItem", position: 3, name: d.title, item: url },
+      ],
+    },
+  ],
 };
 ---
 

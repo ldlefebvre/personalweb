@@ -9,10 +9,11 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   type?: "website" | "article" | "profile";
   noindex?: boolean;
 }
-const { title, description, image, type, noindex } = Astro.props;
+const { title, description, image, imageAlt, type, noindex } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +32,14 @@ const { title, description, image, type, noindex } = Astro.props;
         document.documentElement.classList.add("js"),
       );
     </script>
-    <Seo title={title} description={description} image={image} type={type} noindex={noindex} />
+    <Seo
+      title={title}
+      description={description}
+      image={image}
+      imageAlt={imageAlt}
+      type={type}
+      noindex={noindex}
+    />
     <slot name="head" />
     <ClientRouter />
   </head>

@@ -9,7 +9,21 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://www.laurentlefebvre.me",
   output: "static",
-  integrations: [react(), mdx(), sitemap()],
+  // Match Firebase Hosting (cleanUrls: true, trailingSlash: false) so the
+  // canonical tags and sitemap point at the exact URLs that are served — no
+  // redirect hop, no trailing-slash duplicates.
+  trailingSlash: "never",
+  build: { format: "file" },
+  integrations: [
+    react(),
+    mdx(),
+    sitemap({
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

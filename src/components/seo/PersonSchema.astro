@@ -1,38 +1,57 @@
 ---
 import { site } from "@/data/site";
 
+const personId = `${site.url}/#person`;
+const websiteId = `${site.url}/#website`;
+
 const json = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  jobTitle: site.role,
-  url: site.url,
-  email: `mailto:${site.email}`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Montréal",
-    addressRegion: "QC",
-    addressCountry: "CA",
-  },
-  sameAs: [
-    site.socials.github.url,
-    site.socials.linkedin.url,
-    site.socials.instagram.url,
-  ],
-  knowsAbout: [
-    "iOS Development",
-    "Swift",
-    "SwiftUI",
-    "Kotlin Multiplatform",
-    "Jetpack Compose",
-    "Android Development",
-    "Flutter",
-    "React",
-    "Software Engineering",
-    "Mobile Development",
-    "Web Development",
-    "Full-Stack Development",
-    "Backend Development",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: site.url,
+      name: site.name,
+      description: site.tagline,
+      inLanguage: "en",
+      publisher: { "@id": personId },
+    },
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: site.name,
+      jobTitle: site.role,
+      description: site.blurb,
+      url: site.url,
+      image: `${site.url}/laurent-lefebvre.jpg`,
+      email: `mailto:${site.email}`,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Montréal",
+        addressRegion: "QC",
+        addressCountry: "CA",
+      },
+      sameAs: [
+        site.socials.github.url,
+        site.socials.linkedin.url,
+        site.socials.instagram.url,
+      ],
+      knowsAbout: [
+        "iOS Development",
+        "Swift",
+        "SwiftUI",
+        "Kotlin Multiplatform",
+        "Jetpack Compose",
+        "Android Development",
+        "Flutter",
+        "React",
+        "Software Engineering",
+        "Mobile Development",
+        "Web Development",
+        "Full-Stack Development",
+        "Backend Development",
+      ],
+    },
   ],
 };
 ---
