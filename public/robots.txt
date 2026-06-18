@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Decorative background video (hero loop) — not real content, keep it out of Google's video index.
+Disallow: /media/
 
 Sitemap: https://www.laurentlefebvre.me/sitemap-index.xml
