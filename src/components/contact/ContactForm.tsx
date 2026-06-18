@@ -55,7 +55,9 @@ export default function ContactForm() {
       s.defer = true;
       document.head.appendChild(s);
     }
-  }, []);
+    // Re-run when returning to the form (e.g. "Send another message"), since the
+    // widget div is unmounted in the success view and a fresh, empty one mounts.
+  }, [status]);
 
   function validate(data: { name: string; email: string; message: string }): FieldErrors {
     const e: FieldErrors = {};
