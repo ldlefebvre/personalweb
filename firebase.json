@@ -5,6 +5,18 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/project",
+        "destination": "/work",
+        "type": 301
+      },
+      {
+        "source": "/project/**",
+        "destination": "/work",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "/api/contact",
