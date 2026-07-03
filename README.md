@@ -28,7 +28,7 @@ See [`docs/PORTFOLIO_RESEARCH.md`](docs/PORTFOLIO_RESEARCH.md),
 
 ## Requirements
 
-- **Node 20.18+** (Node 22 LTS recommended). The repo was built/tested on Node 20.18.
+- **Node 22.12+** (required by Astro 7). CI and Cloud Functions also use Node 22.
 
 ## Getting started
 
