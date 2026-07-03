@@ -9,8 +9,9 @@
 #   `firebase functions:secrets:set`, NOT here.
 #
 # Behaviour:
-#   - Pull requests  -> build + deploy to an ephemeral Hosting preview channel.
-#   - Push to master -> build + deploy Hosting (live) + the Cloud Function.
+#   - Pull requests  -> build (gate) + deploy to an ephemeral Hosting preview channel.
+#   - Push to master -> build (gate) + deploy Hosting (live) + the Cloud Function.
+#   - Deploy jobs run npm ci so firebase.json's hosting predeploy (npm run build) works.
 
 name: Firebase Deploy
 
@@ -51,16 +52,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/download-artifact@v8
+      - uses: actions/setup-node@v5
         with:
-          name: dist
-          path: dist
+          node-version: 20
+          cache: npm
+      - run: npm ci
       - name: Deploy preview channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+        env:
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
   deploy:
     needs: build
@@ -68,10 +72,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/download-artifact@v8
+      - uses: actions/setup-node@v5
         with:
-          name: dist
-          path: dist
+          node-version: 20
+          cache: npm
+      - run: npm ci
 
       - name: Deploy Hosting (live)
         uses: FirebaseExtended/action-hosting-deploy@v0
@@ -80,6 +85,8 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: ${{ vars.FIREBASE_PROJECT_ID }}
           channelId: live
+        env:
+          PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.PUBLIC_TURNSTILE_SITE_KEY }}
 
       - name: Setup Node for functions
         uses: actions/setup-node@v5
