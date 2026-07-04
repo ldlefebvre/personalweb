@@ -79,23 +79,41 @@ const headerStyle = `background:
 
         {
           d.links.length > 0 && (
-            <div class="mt-8 flex flex-wrap gap-3">
-              {d.links.map((link) => (
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class:list={[
-                    "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5",
-                    link.primary
-                      ? "bg-primary text-ink shadow-glow-soft hover:bg-primary-strong"
-                      : "border border-border-strong text-text hover:border-primary hover:text-primary",
-                  ]}
-                >
-                  {link.label}
-                  <Icon name="external" size={15} />
-                </a>
-              ))}
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              {d.links.map((link) =>
+                link.badge ? (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    class="inline-flex transition-transform duration-200 hover:-translate-y-0.5"
+                  >
+                    <img
+                      src={`/badges/${link.badge === "appstore" ? "app-store" : "google-play"}.svg`}
+                      alt={link.label}
+                      height="44"
+                      class="h-11 w-auto"
+                      loading="lazy"
+                    />
+                  </a>
+                ) : (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class:list={[
+                      "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 hover:-translate-y-0.5",
+                      link.primary
+                        ? "bg-primary text-ink shadow-glow-soft hover:bg-primary-strong"
+                        : "border border-border-strong text-text hover:border-primary hover:text-primary",
+                    ]}
+                  >
+                    {link.label}
+                    <Icon name="external" size={15} />
+                  </a>
+                ),
+              )}
             </div>
           )
         }

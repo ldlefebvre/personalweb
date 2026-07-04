@@ -33,6 +33,7 @@ const projects = defineCollection({
           label: z.string(),
           url: z.string(),
           primary: z.boolean().default(false),
+          badge: z.enum(["appstore", "googleplay"]).optional(),
         }),
       )
       .default([]),
